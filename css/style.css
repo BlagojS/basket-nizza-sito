@@ -172,7 +172,7 @@ a {
     display: flex;
     flex-direction: column;
     height: 60vh;
-    background: url(../immagini/jason-leung-nM2WEy42Npg-unsplash.jpg) no-repeat center center/cover;
+    background: url("../immagini/palla.jpg") no-repeat center center/cover;
     background-color: #333;
     justify-content: center;
     align-items: center;
@@ -347,4 +347,35 @@ a {
     flex: 1;
     background-color: #333;
     background: url('/immagini/sponsors/sagrin.JPG') center/cover;
+}
+
+
+/*-----      ----------    -----    Section-4    -----    ----------        -----*/
+
+#footer {
+    background-color: #333;
+}
+
+#footer .container {
+    display: flex;
+    align-items: center;
+}
+
+#footer .container div {
+    padding: 20px;
+    color: white;
+    display: block;
+    flex: auto;
+}
+
+#footer #diritti {
+    text-align: left;
+}
+
+#footer #social {
+    text-align: center;
+}
+
+#footer #autore {
+    text-align: right;
 }
