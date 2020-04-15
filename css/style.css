@@ -1,0 +1,350 @@
+/*-----      ----------    -----    Main    -----    ----------        -----*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/*-----      ----------    -----    Utility    -----    ----------        -----*/
+
+.btn {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: #fff;
+    background: #333;
+    padding: 0.8rem 1rem;
+    border: none;
+}
+
+.btn:hover {
+    background: #555;
+    color: orange;
+}
+
+.btn-light {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: orange;
+    background: #555;
+    padding: 0.8rem 1rem;
+    border: none;
+}
+
+.btn-light:hover {
+    background: orange;
+    color: #555;
+}
+
+.btn-light-small {
+    display: inline-block;
+    font-size: 0.8.rem;
+    color: white;
+    background: #555;
+    padding: 0.4rem 0.6rem;
+    border: none;
+}
+
+.btn-light-small:hover {
+    background: orange;
+    color: #333;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/*-----      ----------    -----    dropdown    -----    ----------        -----*/
+
+.dropbtn {
+    background-color: #333;
+    color: white;
+    font-size: inherit;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: inherit;
+    color: orange;
+}
+
+
+/*-----      ----------    -----    Header    -----    ----------        -----*/
+
+#navbar {
+    background: #333;
+}
+
+#navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar .container #lp {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.9rem 0.2rem;
+    margin-left: 2rem;
+}
+
+#navbar .container #lp:hover {
+    background-color: #555;
+}
+
+#navbar .container .text-logo {
+    flex: 1;
+}
+
+#navbar .container .img-logo {
+    width: 30px;
+    height: 30px;
+    vertical-align: -5px;
+}
+
+#navbar .container h1 {
+    text-transform: uppercase;
+    padding-left: 0.5rem;
+}
+
+#navbar ul li a:hover,
+#navbar ul li .current {
+    background: #555;
+    color: orange;
+}
+
+#navbar .container ul {
+    display: flex;
+    padding-right: 3rem;
+}
+
+#navbar .container ul li {
+    list-style: none;
+}
+
+#navbar .container ul li a {
+    padding: 20px;
+    display: block;
+}
+
+
+/*-----      ----------    -----    Section-1    -----    ----------        -----*/
+
+#showcase .container {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    background: url(../immagini/jason-leung-nM2WEy42Npg-unsplash.jpg) no-repeat center center/cover;
+    background-color: #333;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #333;
+}
+
+#showcase .container h1 {
+    color: #fff;
+    font-size: 3rem;
+    padding-bottom: 3rem;
+}
+
+#showcase .container p {
+    color: #fff;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.color-primary {
+    color: orange;
+}
+
+
+/*-----      ----------    -----    Section-2    -----    ----------        -----*/
+
+#showcase-2 .container {
+    display: flex;
+    height: 103vh;
+}
+
+#showcase-2 .container .image {
+    background: url('../immagini/BN\ x\ Ail.jpeg') no-repeat center;
+    flex: 0.75;
+    background-color: #333;
+}
+
+#showcase-2 .container .text {
+    display: flex;
+    flex: 1;
+    background: #333;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#showcase-2 .container .text h1 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+#showcase-2 .container .text p {
+    font-size: 1.2rem;
+    padding: 1rem 1rem 2rem 1rem;
+    text-align: justify;
+    margin-right: 1rem;
+}
+
+#showcase-2 .container .text p #ail {
+    text-decoration: underline;
+}
+
+#showcase-2 .container .text p #ail:hover {
+    color: orange;
+}
+
+#showcase-2 .container .text b {
+    font-size: 2rem;
+}
+
+#showcase-2 .container .text #spazio {
+    padding-top: 4rem;
+    font-size: 1rem;
+}
+
+
+/*-----      ----------    -----    Section-3    -----    ----------        -----*/
+
+#showcase-3 {
+    display: flex;
+    height: 30vh;
+    flex-direction: row;
+    align-items: center;
+}
+
+.box {
+    flex: 1;
+    background-color: #333;
+    color: white;
+    border: 3px solid #555;
+    padding: 12vh;
+}
+
+.box a {
+    color: black;
+}
+
+.box:hover {
+    color: orange;
+    background-color: #555;
+    border: 3px solid orange;
+}
+
+
+/*-----      ----------    -----    Section-4    -----    ----------        -----*/
+
+#showcase-4 .titolo {
+    display: flex;
+    height: 5vh;
+    border: 3px solid #333;
+    justify-content: center;
+    background-color: #333;
+}
+
+#showcase-4 .titolo h1 {
+    color: white;
+    justify-content: center;
+}
+
+#showcase-4 .foto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#showcase-4 .foto .sps {
+    color: black;
+    height: 25vh;
+    border: 3px solid #333;
+}
+
+#showcase-4 .foto #sps-1 {
+    flex: 1;
+    background-color: #333;
+    background: url('/immagini/sponsors/bincosport.JPG') center/cover;
+}
+
+#showcase-4 .foto #sps-2 {
+    flex: 1;
+    background-color: #333;
+    background: url('/immagini/sponsors/BSAtech.jpg') center/cover;
+}
+
+#showcase-4 .foto #sps-3 {
+    flex: 1;
+    background-color: #333;
+    background: url('/immagini/sponsors/canellitech.jpg') center/cover;
+}
+
+#showcase-4 .foto #sps-4 {
+    flex: 1;
+    background-color: #333;
+    background: url('/immagini/sponsors/caponord.jpg') center/cover;
+}
+
+#showcase-4 .foto #sps-5 {
+    flex: 1;
+    background-color: #333;
+    background: url('/immagini/sponsors/lavanderia1h.jpg') center/cover;
+}
+
+#showcase-4 .foto #sps-6 {
+    flex: 1;
+    background-color: #333;
+    background: url('/immagini/sponsors/puntobere.JPG') center/cover;
+}
+
+#showcase-4 .foto #sps-7 {
+    flex: 1;
+    background-color: #333;
+    background: url('/immagini/sponsors/sagrin.JPG') center/cover;
+}
