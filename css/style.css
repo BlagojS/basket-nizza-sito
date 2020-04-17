@@ -8,6 +8,7 @@
 html,
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #333;
 }
 
 a {
@@ -281,76 +282,97 @@ a {
 
 /*-----      ----------    -----    Section-4    -----    ----------        -----*/
 
-#showcase-4 .titolo {
-    display: flex;
-    height: 5vh;
-    border: 3px solid #333;
-    justify-content: center;
-    background-color: #333;
-}
-
-#showcase-4 .titolo h1 {
-    color: white;
-    justify-content: center;
-}
-
 #showcase-4 .foto {
+    background-color: #fff;
+}
+
+#showcase-4 #riga-1 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding-top: 1rem;
 }
 
-#showcase-4 .foto .sps {
-    color: black;
-    height: 25vh;
-    border: 3px solid #333;
+#showcase-4 #riga-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
 }
 
-#showcase-4 .foto #sps-1 {
-    flex: 1;
-    background-color: #333;
-    background: url('/immagini/sponsors/bincosport.JPG') center/cover;
+#showcase-4 .sps {
+    height: 12vh;
+    width: 6vw;
+    padding: 0.5rem 1rem;
+    /*border-right: 1px double #333;*/
 }
 
-#showcase-4 .foto #sps-2 {
-    flex: 1;
-    background-color: #333;
-    background: url('/immagini/sponsors/BSAtech.jpg') center/cover;
+#showcase-4 #sps-1 {
+    background: url('/immagini/sponsors/bincosport.JPG') center;
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
 }
 
-#showcase-4 .foto #sps-3 {
-    flex: 1;
-    background-color: #333;
-    background: url('/immagini/sponsors/canellitech.jpg') center/cover;
+#showcase-4 #sps-2 {
+    background: url('/immagini/sponsors/BSAtech.jpg') center;
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
 }
 
-#showcase-4 .foto #sps-4 {
-    flex: 1;
-    background-color: #333;
-    background: url('/immagini/sponsors/caponord.jpg') center/cover;
+#showcase-4 #sps-3 {
+    background: url('/immagini/sponsors/canellitech.jpg') center;
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
 }
 
-#showcase-4 .foto #sps-5 {
-    flex: 1;
-    background-color: #333;
+#showcase-4 #sps-4 {
+    background: url('/immagini/sponsors/caponord.jpg') center;
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
+    border-right: none;
+}
+
+#showcase-4 #sps-5 {
     background: url('/immagini/sponsors/lavanderia1h.jpg') center/cover;
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
 }
 
-#showcase-4 .foto #sps-6 {
-    flex: 1;
-    background-color: #333;
+#showcase-4 #sps-6 {
     background: url('/immagini/sponsors/puntobere.JPG') center/cover;
+    background-size: 100px 40px;
+    background-repeat: no-repeat;
 }
 
-#showcase-4 .foto #sps-7 {
-    flex: 1;
-    background-color: #333;
+#showcase-4 #sps-7 {
     background: url('/immagini/sponsors/sagrin.JPG') center/cover;
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
+}
+
+#showcase-4 #sps-8 {
+    background: url('/immagini/sponsors/rapetti-paolo-abbigliamenti.jpg') center/cover;
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+}
+
+#showcase-4 #sps-9 {
+    background: url('/immagini/sponsors/ebrille-industries.jpg') center/cover;
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
+}
+
+#showcase-4 #sps-10 {
+    background: url('/immagini/sponsors/ottica-mali.jpg') center/cover;
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    border-right: none;
 }
 
 
-/*-----      ----------    -----    Section-4    -----    ----------        -----*/
+/*-----      ----------    -----    Footer    -----    ----------        -----*/
 
 #footer {
     background-color: #333;
@@ -373,9 +395,63 @@ a {
 }
 
 #footer #social {
+    display: flex;
     text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer #social p {
+    flex: 0.3;
+}
+
+#footer #social a {
+    flex: 0.1;
 }
 
 #footer #autore {
     text-align: right;
+}
+
+
+/*-----      ----------    -----    About    -----    ----------        -----*/
+
+
+/*-----      ----------    -----    section-1-about    -----    ----------        -----*/
+
+#section-1-about {
+    background-color: black;
+    color: red;
+    font-size: 2rem;
+    text-align: justify;
+    opacity: 0.9;
+}
+
+#section-1-about #spazio {
+    height: 75vh;
+    background: url("/immagini/BN\ logo.jpeg") no-repeat center;
+    background-attachment: fixed;
+    background-origin: content-box;
+    background-size: 30% 60%;
+}
+
+#section-1-about .container {
+    color: white;
+    background-color: #333;
+}
+
+#section-1-about #spazio-2 {
+    height: 80vh;
+    background: url("/immagini/minibasket.jpg") no-repeat center;
+    background-attachment: fixed;
+    background-origin: padding-box;
+    background-size: 60% 100%;
+}
+
+#section-1-about #spazio-3 {
+    height: 80vh;
+    background: url("/immagini/palla.jpg") no-repeat center;
+    background-attachment: fixed;
+    background-origin: padding-box;
+    background-size: 60% 100%;
 }
