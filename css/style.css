@@ -9,6 +9,7 @@ html,
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #333;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -124,7 +125,7 @@ a {
     display: flex;
     justify-content: space-evenly;
     padding: 0.9rem 0.2rem;
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 #navbar .container #lp:hover {
@@ -154,7 +155,7 @@ a {
 
 #navbar .container ul {
     display: flex;
-    padding-right: 3rem;
+    padding-right: 1rem;
 }
 
 #navbar .container ul li {
@@ -174,6 +175,7 @@ a {
     flex-direction: column;
     height: 60vh;
     background: url("../immagini/palla.jpg") no-repeat center center/cover;
+    background-attachment: fixed;
     background-color: #333;
     justify-content: center;
     align-items: center;
@@ -206,7 +208,9 @@ a {
 }
 
 #showcase-2 .container .image {
+    display: block;
     background: url('../immagini/BN\ x\ Ail.jpeg') no-repeat center;
+    background-size: 70% 100%;
     flex: 0.75;
     background-color: #333;
 }
@@ -256,37 +260,222 @@ a {
 
 #showcase-3 {
     display: flex;
-    height: 30vh;
     flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
+    padding: 5vh 0;
+    background-color: white;
 }
 
 .box {
-    flex: 1;
     background-color: #333;
-    color: white;
     border: 3px solid #555;
-    padding: 12vh;
-}
-
-.box a {
-    color: black;
+    font-size: 2.5rem;
+    text-align: center;
+    color: orange;
 }
 
 .box:hover {
-    color: orange;
     background-color: #555;
     border: 3px solid orange;
 }
 
+.sector-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    height: 20vw;
+}
 
-/*-----      ----------    -----    Section-4    -----    ----------        -----*/
+.sector-name:hover {
+    opacity: 0.2;
+    animation: opacity-animation 0.5s;
+}
 
-#showcase-4 .foto {
+@keyframes opacity-animation {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.2;
+    }
+}
+
+
+/*    !!!Tovare qualche cosa che va meglio di queste immagini!!!*/
+
+
+/*      Qua posso inserire una JS al posto delle animazioni     */
+
+#box-1 {
+    background: url("/immagini/segnior-bw.jpg") center/cover;
+}
+
+#box-2 {
+    background: url("/immagini/giovanili/giovanili-bw.jpg") center/cover;
+}
+
+#box-3 {
+    background: url("/immagini/minibasket/minibasket-bw.jpg") center/cover;
+}
+
+#box-1:hover {
+    background: url("/immagini/segnior.jpg") center/cover
+}
+
+@keyframes background-animation-1 {
+    form {
+        background: url("/immagini/segnior-bw.jpg") center/cover
+    }
+    to {
+        background: url("/immagini/segnior.jpg") center/cover
+    }
+}
+
+#box-2:hover {
+    animation: background-animation-2 1s forwards;
+}
+
+@keyframes background-animation-2 {
+    form {
+        background: url("/immagini/giovanili/giovanili-bw.jpg") center/cover
+    }
+    to {
+        background: url("/immagini/giovanili/giovanili.jpg") center/cover
+    }
+}
+
+#box-3:hover {
+    animation: background-animation-3 1s forwards;
+}
+
+@keyframes background-animation-3 {
+    form {
+        background: url("/immagini/minibasket/minibasket-bw.jpg") center/cover
+    }
+    to {
+        background: url("/immagini/minibasket/minibasket.jpg") center/cover
+    }
+}
+
+
+/*-----      ----------    -----    Next-game    -----    ----------        -----*/
+
+#next-game {
+    background-color: gray;
+    background: url("/immagini/campo.jpg") center center/cover;
+    /*background-attachment: fixed;*/
+    color: #fff;
+}
+
+#next-game .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.team {
+    display: flex;
+    padding: 1rem 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-name {
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+.team-logo {
+    height: 90px;
+    width: 90px;
+    padding: 1rem;
+    margin: auto;
+}
+
+#versus p {
+    font-size: 5rem;
+    font-weight: bold;
+    color: orange;
+}
+
+#game-info {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#game-info p {
+    margin: 0 1rem;
+}
+
+#indication {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem;
+}
+
+
+/*-----      ----------    -----    Roaster    -----    ----------        -----*/
+
+#roaster {
+    font-size: 1rem;
+    background-color: #fff;
+    border-bottom: 20px solid darkgray;
+}
+
+#roaster #nome-sezione {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    background-color: darkgray;
+}
+
+.riga-giocatori {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.player {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+
+.player-foto {
+    height: 150px;
+    width: 150px;
+    background: url("/immagini/icon-bb-player.jpg") center;
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    margin: 1rem;
+}
+
+.player-name {
+    padding: 1rem;
+}
+
+
+/*-----      ----------    -----    Sponsor-section    -----    ----------        -----*/
+
+#sponsor-section .foto {
     background-color: #fff;
 }
 
-#showcase-4 #riga-1 {
+#sponsor-section #riga-1 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -294,7 +483,7 @@ a {
     padding-top: 1rem;
 }
 
-#showcase-4 #riga-2 {
+#sponsor-section #riga-2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -302,69 +491,68 @@ a {
     padding-bottom: 1rem;
 }
 
-#showcase-4 .sps {
+#sponsor-section .sponsor {
     height: 12vh;
     width: 6vw;
     padding: 0.5rem 1rem;
-    /*border-right: 1px double #333;*/
 }
 
-#showcase-4 #sps-1 {
+#sponsor-section #sps-1 {
     background: url('/immagini/sponsors/bincosport.JPG') center;
     background-size: 80px 80px;
     background-repeat: no-repeat;
 }
 
-#showcase-4 #sps-2 {
+#sponsor-section #sps-2 {
     background: url('/immagini/sponsors/BSAtech.jpg') center;
     background-size: 80px 80px;
     background-repeat: no-repeat;
 }
 
-#showcase-4 #sps-3 {
+#sponsor-section #sps-3 {
     background: url('/immagini/sponsors/canellitech.jpg') center;
     background-size: 50px 50px;
     background-repeat: no-repeat;
 }
 
-#showcase-4 #sps-4 {
+#sponsor-section #sps-4 {
     background: url('/immagini/sponsors/caponord.jpg') center;
     background-size: 60px 60px;
     background-repeat: no-repeat;
     border-right: none;
 }
 
-#showcase-4 #sps-5 {
+#sponsor-section #sps-5 {
     background: url('/immagini/sponsors/lavanderia1h.jpg') center/cover;
     background-size: 60px 60px;
     background-repeat: no-repeat;
 }
 
-#showcase-4 #sps-6 {
+#sponsor-section #sps-6 {
     background: url('/immagini/sponsors/puntobere.JPG') center/cover;
     background-size: 100px 40px;
     background-repeat: no-repeat;
 }
 
-#showcase-4 #sps-7 {
+#sponsor-section #sps-7 {
     background: url('/immagini/sponsors/sagrin.JPG') center/cover;
     background-size: 60px 60px;
     background-repeat: no-repeat;
 }
 
-#showcase-4 #sps-8 {
+#sponsor-section #sps-8 {
     background: url('/immagini/sponsors/rapetti-paolo-abbigliamenti.jpg') center/cover;
     background-size: 50px 50px;
     background-repeat: no-repeat;
 }
 
-#showcase-4 #sps-9 {
+#sponsor-section #sps-9 {
     background: url('/immagini/sponsors/ebrille-industries.jpg') center/cover;
     background-size: 80px 80px;
     background-repeat: no-repeat;
 }
 
-#showcase-4 #sps-10 {
+#sponsor-section #sps-10 {
     background: url('/immagini/sponsors/ottica-mali.jpg') center/cover;
     background-size: 50px 50px;
     background-repeat: no-repeat;
@@ -427,31 +615,31 @@ a {
     opacity: 0.9;
 }
 
-#section-1-about #spazio {
-    height: 75vh;
-    background: url("/immagini/BN\ logo.jpeg") no-repeat center;
-    background-attachment: fixed;
+#section-1-about .space {
     background-origin: content-box;
+    height: 75vh;
+}
+
+#section-1-about #spazio-1 {
+    background: url("/immagini/BN\ logo.jpeg") no-repeat center;
     background-size: 30% 60%;
+    background-attachment: fixed;
 }
 
 #section-1-about .container {
     color: white;
     background-color: #333;
+    padding: 2rem;
 }
 
 #section-1-about #spazio-2 {
-    height: 80vh;
     background: url("/immagini/minibasket.jpg") no-repeat center;
-    background-attachment: fixed;
-    background-origin: padding-box;
     background-size: 60% 100%;
+    background-attachment: fixed;
 }
 
 #section-1-about #spazio-3 {
-    height: 80vh;
     background: url("/immagini/palla.jpg") no-repeat center;
-    background-attachment: fixed;
-    background-origin: padding-box;
     background-size: 60% 100%;
+    background-attachment: fixed;
 }
