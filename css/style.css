@@ -70,7 +70,7 @@ a {
 /*-----      ----------    -----    dropdown    -----    ----------        -----*/
 
 .dropbtn {
-    background-color: #333;
+    background-color: inherit;
     color: white;
     font-size: inherit;
     border: none;
@@ -95,10 +95,6 @@ a {
     display: block;
 }
 
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -106,6 +102,7 @@ a {
 .dropdown:hover .dropbtn {
     background-color: inherit;
     color: orange;
+    transition: 1s;
 }
 
 
@@ -124,12 +121,16 @@ a {
 #navbar .container #lp {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     padding: 0.9rem 0.2rem;
     margin-left: 1rem;
+    transition: all 1s;
 }
 
 #navbar .container #lp:hover {
     background-color: #555;
+    color: black;
+    transition: all 0.5s;
 }
 
 #navbar .container .text-logo {
@@ -139,7 +140,6 @@ a {
 #navbar .container .img-logo {
     width: 30px;
     height: 30px;
-    vertical-align: -5px;
 }
 
 #navbar .container h1 {
@@ -149,8 +149,9 @@ a {
 
 #navbar ul li a:hover,
 #navbar ul li .current {
-    background: #555;
+    background-color: #555;
     color: orange;
+    transition: all 0.5s ease-in-out;
 }
 
 #navbar .container ul {
@@ -160,11 +161,13 @@ a {
 
 #navbar .container ul li {
     list-style: none;
+    transition: all 0.5s ease-in-out;
 }
 
 #navbar .container ul li a {
     padding: 20px;
     display: block;
+    transition: all 0.5s ease-in-out;
 }
 
 
@@ -273,33 +276,28 @@ a {
     font-size: 2.5rem;
     text-align: center;
     color: orange;
+    transition: all 1s ease;
 }
 
 .box:hover {
-    background-color: #555;
     border: 3px solid orange;
+    transition: all 1s ease;
 }
 
 .sector-name {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30vw;
-    height: 20vw;
+    width: 28vw;
+    height: 40vh;
+    transition: all 1s ease;
 }
 
 .sector-name:hover {
     opacity: 0.2;
-    animation: opacity-animation 0.5s;
-}
-
-@keyframes opacity-animation {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0.2;
-    }
+    width: 41vw;
+    height: 50vh;
+    transition: all 1s ease;
 }
 
 
@@ -310,53 +308,32 @@ a {
 
 #box-1 {
     background: url("/immagini/segnior-bw.jpg") center/cover;
+    transition: background 1s;
 }
 
 #box-2 {
     background: url("/immagini/giovanili/giovanili-bw.jpg") center/cover;
+    transition: background 1s;
 }
 
 #box-3 {
     background: url("/immagini/minibasket/minibasket-bw.jpg") center/cover;
+    transition: background 1s;
 }
 
 #box-1:hover {
-    background: url("/immagini/segnior.jpg") center/cover
-}
-
-@keyframes background-animation-1 {
-    form {
-        background: url("/immagini/segnior-bw.jpg") center/cover
-    }
-    to {
-        background: url("/immagini/segnior.jpg") center/cover
-    }
+    background: url("/immagini/segnior.jpg") center/cover;
+    transition: background 1s;
 }
 
 #box-2:hover {
-    animation: background-animation-2 1s forwards;
-}
-
-@keyframes background-animation-2 {
-    form {
-        background: url("/immagini/giovanili/giovanili-bw.jpg") center/cover
-    }
-    to {
-        background: url("/immagini/giovanili/giovanili.jpg") center/cover
-    }
+    background: url("/immagini/giovanili/giovanili.jpg") center/cover;
+    transition: background 1s;
 }
 
 #box-3:hover {
-    animation: background-animation-3 1s forwards;
-}
-
-@keyframes background-animation-3 {
-    form {
-        background: url("/immagini/minibasket/minibasket-bw.jpg") center/cover
-    }
-    to {
-        background: url("/immagini/minibasket/minibasket.jpg") center/cover
-    }
+    background: url("/immagini/minibasket/minibasket.jpg") center/cover;
+    transition: background 1s;
 }
 
 
@@ -446,26 +423,72 @@ a {
 }
 
 .player {
-    flex: 1;
     display: flex;
     flex-direction: column;
     background-color: #fff;
     align-items: center;
     justify-content: space-evenly;
     margin-bottom: 1rem;
+    transition: all 1s;
 }
 
 .player-foto {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     height: 150px;
     width: 150px;
-    background: url("/immagini/icon-bb-player.jpg") center;
-    background-size: 100% 80%;
+    background: url("/immagini/icon-bb-player.jpg") center/cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    margin: 1rem;
+    margin: 1rem 0 0.5rem 0;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s;
+}
+
+.player-foto:hover .overlay {
+    height: 100%;
+    transition: all 1s;
+}
+
+.player-foto img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: black;
+    transition: all 1s;
+}
+
+.overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*background: url("/immagini/BN\ logo.jpeg") center/cover;*/
+    background-color: black;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bolder;
+    transition: 1s ease;
+}
+
+.player-foto p {
+    position: absolute;
+    transition: all 1s;
 }
 
 .player-name {
-    padding: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -497,6 +520,12 @@ a {
     padding: 0.5rem 1rem;
 }
 
+#sponsor-section .sponsor:hover {
+    transform: rotateY(360deg);
+    background: black;
+    transition: all 1s;
+}
+
 #sponsor-section #sps-1 {
     background: url('/immagini/sponsors/bincosport.JPG') center;
     background-size: 80px 80px;
@@ -519,7 +548,6 @@ a {
     background: url('/immagini/sponsors/caponord.jpg') center;
     background-size: 60px 60px;
     background-repeat: no-repeat;
-    border-right: none;
 }
 
 #sponsor-section #sps-5 {
@@ -556,7 +584,6 @@ a {
     background: url('/immagini/sponsors/ottica-mali.jpg') center/cover;
     background-size: 50px 50px;
     background-repeat: no-repeat;
-    border-right: none;
 }
 
 
@@ -621,9 +648,8 @@ a {
 }
 
 #section-1-about #spazio-1 {
-    background: url("/immagini/BN\ logo.jpeg") no-repeat center;
+    background: url("/immagini/BN\ logo.jpeg") no-repeat center fixed;
     background-size: 30% 60%;
-    background-attachment: fixed;
 }
 
 #section-1-about .container {
@@ -643,3 +669,6 @@ a {
     background-size: 60% 100%;
     background-attachment: fixed;
 }
+
+
+/*-------------------------------------------------------------------------------------------------*/
