@@ -5,38 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="javas.js"></script>
+    <link rel="icon" type="image/png" href="/immagini/BN logo.jpeg">
     <title>BASKET NIZZA | La dinastia</title>
-
 </head>
 
 <body>
     <!--Navbar-->
-    <header class="relative">
+    <header>
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
         <nav id="navbar">
-            <div class="container">
-                <a id="lp" href="index.html">
-                    <img class="img-logo" src="immagini/BN logo.jpeg" alt="logo del Basket Nizza">
-                    <h1 class="text-logo">basket nizza</h1>
+
+            <div class="topnav" id="myTopnav">
+                <a href="index.html" id="primo">
+                    <img class="img-logo" src="immagini/BN logo.jpeg" alt="logo del Basket Nizza"> BASKET NIZZA
                 </a>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a class="current" href="about.html">About</a></li>
-                    <li>
-                        <div class="dropdown">
-                            <a><button class="dropbtn">Categories</button></a>
-                            <div class="dropdown-content">
-                                <a href="segnior.html">Segnior</a>
-                                <a href="giovanili.html">Giovanili</a>
-                                <a href="minibasket.html">Minibasket</a>
-                            </div>
+                <div id="container">
+                    <a href="index.html">Home</a>
+                    <!--<a href="#news">News</a>-->
+                    <a href="about.html" class="active">About</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Senior <i class="fa fa-caret-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#next-game">Prima squadra</a>
+                            <a href="giovanili.html">Seconda squadra</a>
                         </div>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Giovanili <i class="fa fa-caret-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="u18.html">Under 18</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Minibasket <i class="fa fa-caret-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="esordienti.html">Esordienti</a>
+                            <a href="aquilotti.html">Aquilotti</a>
+                            <a href="scoiattoli.html">Scoiattoli</a>
+                            <a href="pulcini.html">Pulcini</a>
+                        </div>
+                    </div>
+                    <a href="contact.html">Contact</a>
+                    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myNavFunction()">&#9776;</a>
+                </div>
             </div>
         </nav>
     </header>
-
 
     <!-- Section-1 -->
     <section id="section-1-about">

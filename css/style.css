@@ -50,10 +50,10 @@ a {
 
 .btn-light-small {
     display: inline-block;
-    font-size: 0.8.rem;
+    font-size: 1.5vw;
     color: white;
     background: #555;
-    padding: 0.4rem 0.6rem;
+    padding: 0.5vw 0.5vw;
     border: none;
 }
 
@@ -67,8 +67,169 @@ a {
 }
 
 
+/*-----      ----------    -----    Navbar and Dropdown    -----    ----------        -----*/
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    color: #f2f2f2;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a.active {
+    text-decoration: none;
+    background-color: #555;
+    color: orange;
+    transition: all 0.5s ease-in-out;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 18px 20px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 16px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.topnav a:hover,
+.dropdown:hover .dropbtn {
+    background-color: #555;
+    color: orange;
+    transition: all 0.5s ease-in-out;
+}
+
+.dropdown-content a:hover {
+    background-color: darkgrey;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#primo {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1vw;
+    transition: all 1s;
+    font-weight: bold;
+    padding: 13px 15px;
+}
+
+#navbar #primo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5vw;
+}
+
+@media screen and (min-width:800px) {
+    #primo:hover {
+        background-color: #555;
+        color: black;
+        transition: all 0.5s;
+    }
+}
+
+#container {
+    float: right;
+}
+
+@media screen and (max-width: 800px) {
+    .topnav a:not(:first-child),
+    .dropdown .dropbtn {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+    #primo {
+        display: none;
+    }
+    #container {
+        float: none;
+    }
+    .dropdown:active .dropdown-content {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .topnav.responsive {
+        position: relative;
+    }
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .topnav.responsive .dropdown {
+        float: none;
+    }
+    .topnav.responsive .dropdown-content {
+        position: relative;
+    }
+    .topnav.responsive .dropdown .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+
 /*-----      ----------    -----    dropdown    -----    ----------        -----*/
 
+
+/*
 .dropbtn {
     background-color: inherit;
     color: white;
@@ -105,9 +266,13 @@ a {
     transition: 1s;
 }
 
+*/
+
 
 /*-----      ----------    -----    Header    -----    ----------        -----*/
 
+
+/*
 #navbar {
     background: #333;
 }
@@ -169,6 +334,37 @@ a {
     display: block;
     transition: all 0.5s ease-in-out;
 }
+*/
+
+
+/*-------------scroll idicator ----------------------*/
+
+
+/* The progress container (grey background) */
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: transparent;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+
+/* The progress bar (scroll indicator) */
+
+.progress-bar {
+    height: 8px;
+    background: orange;
+    width: 0%;
+}
+
+@media screen and (max-width: 800px) {
+    .progress-bar {
+        height: 4px;
+    }
+}
 
 
 /*-----      ----------    -----    Section-1    -----    ----------        -----*/
@@ -178,7 +374,7 @@ a {
     flex-direction: column;
     height: 60vh;
     background: url("../immagini/palla.jpg") no-repeat center center/cover;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     background-color: #333;
     justify-content: center;
     align-items: center;
@@ -203,11 +399,44 @@ a {
 }
 
 
-/*-----      ----------    -----    Section-2    -----    ----------        -----*/
+/*-----      ----------    -----    Section-2.1    -----    ----------        -----*/
+
+#showcase-2-1 .container {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    background: url("../immagini/BN\ x\ Ail-or.jpg") no-repeat center/cover;
+    background-size: 90% 100%;
+    /*background-attachment: fixed;*/
+    background-color: #bbb;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #333;
+}
+
+#showcase .container h1 {
+    color: #fff;
+    font-size: 3rem;
+    padding-bottom: 3rem;
+}
+
+#showcase .container p {
+    color: #fff;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.color-primary {
+    color: orange;
+}
+
+
+/*-----      ----------    -----    Section-2.2    -----    ----------        -----*/
 
 #showcase-2 .container {
     display: flex;
-    height: 103vh;
+    height: 60vh;
 }
 
 #showcase-2 .container .image {
@@ -221,7 +450,7 @@ a {
 #showcase-2 .container .text {
     display: flex;
     flex: 1;
-    background: #333;
+    background: darkgray;
     color: #fff;
     flex-direction: column;
     justify-content: center;
@@ -231,11 +460,10 @@ a {
 
 #showcase-2 .container .text h1 {
     font-size: 2rem;
-    padding-bottom: 1rem;
 }
 
 #showcase-2 .container .text p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 1rem 1rem 2rem 1rem;
     text-align: justify;
     margin-right: 1rem;
@@ -249,91 +477,330 @@ a {
     color: orange;
 }
 
-#showcase-2 .container .text b {
-    font-size: 2rem;
-}
-
 #showcase-2 .container .text #spazio {
-    padding-top: 4rem;
+    padding-top: 1rem;
     font-size: 1rem;
 }
 
 
+/*-----      ----------    -----    Slideshow    -----    ----------        -----*/
+
+.mySlides {
+    display: none
+}
+
+.mySlides img {
+    vertical-align: middle;
+    margin: auto;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    box-sizing: border-box
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Caption text */
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/* On smaller screens, decrease text size */
+
+@media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+}
+
+
 /*-----      ----------    -----    Section-3    -----    ----------        -----*/
+
+
+/* design PC */
 
 #showcase-3 {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    padding: 5vh 0;
+    padding: 3vw 0;
     background-color: white;
 }
+
+
+/* design tablet e cellulare */
+
+@media screen and (max-width: 1200px) {
+    #showcase-3 {
+        flex-direction: column;
+    }
+}
+
+
+/* design principale dei box */
 
 .box {
     background-color: #333;
     border: 3px solid #555;
-    font-size: 2.5rem;
+    font-size: 6vh;
     text-align: center;
     color: orange;
     transition: all 1s ease;
+    margin: 1vw 0 1vw 0;
 }
 
-.box:hover {
-    border: 3px solid orange;
-    transition: all 1s ease;
+
+/* animazione hover per PC */
+
+@media screen and (min-width: 1200px) {
+    .box:hover {
+        border: 3px solid orange;
+        transition: all 1s ease;
+    }
 }
+
+
+/* design per tablet e cellulare */
+
+@media screen and (max-width: 1200px) {
+    .box {
+        width: 100%;
+        height: 30%;
+        font-size: 4vh;
+    }
+}
+
+@keyframes animazione-box {
+    from {
+        border: 3px solid #555;
+    }
+    to {
+        border: 3px solid orange;
+    }
+}
+
+
+/* alineamento orizontale per PC */
 
 .sector-name {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28vw;
-    height: 40vh;
-    transition: all 1s ease;
-}
-
-.sector-name:hover {
-    opacity: 0.2;
-    width: 41vw;
-    height: 50vh;
+    width: 340px;
+    height: 220px;
     transition: all 1s ease;
 }
 
 
-/*    !!!Tovare qualche cosa che va meglio di queste immagini!!!*/
+/* animazione hover per PC */
+
+@media screen and (min-width: 1200px) {
+    .sector-name:hover {
+        opacity: 0.2;
+        width: 520px;
+        height: 300px;
+        transition: all 1s ease;
+    }
+}
 
 
-/*      Qua posso inserire una JS al posto delle animazioni     */
+/* alineamento verticale per tabelt e telefono */
+
+@media screen and (max-width: 1200px) {
+    .sector-name {
+        width: 100vw;
+        height: 25vw;
+    }
+}
+
+
+/* animazione per tablet e telefono */
+
+@media screen and (max-width: 1200px) {
+    #box-1 {
+        animation: animazione-box-1 1.5s 3s infinite alternate, animazione-box 1.5s 3s infinite alternate;
+    }
+    #box-2 {
+        animation: animazione-box-2 1.5s 4s infinite alternate, animazione-box 1.5s 4s infinite alternate;
+    }
+    #box-3 {
+        animation: animazione-box-3 1.5s 5s infinite alternate, animazione-box 1.5s 5s infinite alternate;
+    }
+}
+
+@keyframes animazione-opacity {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.2;
+    }
+}
+
+@keyframes animazione-box-1 {
+    from {
+        background: url("/immagini/segnior-bw.jpg") center/cover;
+    }
+    to {
+        background: url("/immagini/segnior.jpg") center/cover;
+    }
+}
+
+@keyframes animazione-box-2 {
+    from {
+        background: url("/immagini/giovanili/giovanili-bw.jpg") center/cover;
+    }
+    to {
+        background: url("/immagini/giovanili/giovanili.jpg") center/cover;
+    }
+}
+
+@keyframes animazione-box-3 {
+    from {
+        background: url("/immagini/minibasket/minibasket-bw.jpg") center/cover;
+    }
+    to {
+        background: url("/immagini/minibasket/minibasket.jpg") center/cover;
+    }
+}
 
 #box-1 {
     background: url("/immagini/segnior-bw.jpg") center/cover;
-    transition: background 1s;
+    transition: all 1s;
 }
 
 #box-2 {
     background: url("/immagini/giovanili/giovanili-bw.jpg") center/cover;
-    transition: background 1s;
+    transition: all 1s;
 }
 
 #box-3 {
     background: url("/immagini/minibasket/minibasket-bw.jpg") center/cover;
-    transition: background 1s;
+    transition: all 1s;
 }
 
-#box-1:hover {
-    background: url("/immagini/segnior.jpg") center/cover;
-    transition: background 1s;
-}
-
-#box-2:hover {
-    background: url("/immagini/giovanili/giovanili.jpg") center/cover;
-    transition: background 1s;
-}
-
-#box-3:hover {
-    background: url("/immagini/minibasket/minibasket.jpg") center/cover;
-    transition: background 1s;
+@media screen and (min-width: 1200px) {
+    #box-1:hover {
+        background: url("/immagini/segnior.jpg") center/cover;
+        transition: all 1s;
+    }
+    #box-2:hover {
+        background: url("/immagini/giovanili/giovanili.jpg") center/cover;
+        transition: all 1s;
+    }
+    #box-3:hover {
+        background: url("/immagini/minibasket/minibasket.jpg") center/cover;
+        transition: all 1s;
+    }
 }
 
 
@@ -355,25 +822,25 @@ a {
 
 .team {
     display: flex;
-    padding: 1rem 4rem;
+    padding: 1vw 4vw;
     align-items: center;
     justify-content: center;
 }
 
 .team-name {
-    font-size: 3rem;
-    margin: 1rem 0;
+    font-size: 3vw;
+    margin: 1vw 0;
 }
 
 .team-logo {
-    height: 90px;
-    width: 90px;
-    padding: 1rem;
+    height: 7vw;
+    width: 7vw;
+    padding: 1vw;
     margin: auto;
 }
 
 #versus p {
-    font-size: 5rem;
+    font-size: 6vw;
     font-weight: bold;
     color: orange;
 }
@@ -381,21 +848,27 @@ a {
 #game-info {
     display: flex;
     flex-direction: row;
-    font-size: 1.5rem;
+    font-size: 2vw;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
 #game-info p {
-    margin: 0 1rem;
+    margin: 0 2vw;
 }
 
 #indication {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 3rem;
+    padding: 2vw;
+}
+
+#demo {
+    font-size: 2vw;
+    text-align: center;
+    padding-bottom: 1vw;
 }
 
 
@@ -404,22 +877,45 @@ a {
 #roaster {
     font-size: 1rem;
     background-color: #fff;
-    border-bottom: 20px solid darkgray;
+    border-bottom: 1.5vw solid darkgray;
 }
 
 #roaster #nome-sezione {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3vw;
     font-weight: bold;
-    padding: 1rem;
+    padding: 1vw;
     background-color: darkgray;
 }
 
-.riga-giocatori {
+@media screen and (min-width:1100px) {
+    .riga-giocatori {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}
+
+
+/*
+#roaster .container-1 {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-evenly;
+    align-items: center;
+}*/
+
+@media screen and (max-width: 1100px) {
+    .player {
+        width: 28vw;
+    }
+    #roaster .container-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 }
 
 .player {
@@ -428,20 +924,22 @@ a {
     background-color: #fff;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: 1rem;
+    margin-top: 0.5vw;
+    margin-bottom: 1vw;
     transition: all 1s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .player-foto {
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 200px;
-    width: 180px;
+    height: 16vw;
+    width: 15vw;
     background: url("/immagini/icon-bb-player.jpg") center/cover;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    margin: 1rem 0 0.5rem 0;
+    margin: 1vw 0 0.5vw 0;
     color: white;
     align-items: center;
     justify-content: center;
@@ -475,7 +973,7 @@ a {
     width: 100%;
     height: 0;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     text-align: center;
     transition: 1s ease;
 }
@@ -486,17 +984,33 @@ a {
 }
 
 .player-name {
-    font-size: 1rem;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.5vw;
+    padding: 0.5vw;
+    margin-bottom: 1vw;
 }
 
 #roaster #staff-tecnico {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3vw;
     font-weight: bold;
-    padding: 0.5rem;
+    padding: 0.5vw;
     background-color: darkgray;
+}
+
+#roaster .container-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.staff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 0.5vw 0 1vw 0;
 }
 
 
@@ -506,91 +1020,100 @@ a {
     background-color: #fff;
 }
 
-#sponsor-section #riga-1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding-top: 1rem;
-}
-
-#sponsor-section #riga-2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 1rem;
-}
-
 #sponsor-section .sponsor {
     height: 12vh;
     width: 6vw;
-    padding: 0.5rem 1rem;
+    padding: 0.5vw 1vw;
 }
 
-#sponsor-section .sponsor:hover {
-    transform: rotateY(360deg);
-    background: black;
-    transition: all 1s;
+#sponsor-section .foto {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1vw 1vw;
+}
+
+@media screen and (min-width:1100px) {
+    #sponsor-section .sponsor:hover {
+        transform: rotateY(360deg);
+        background: black;
+        transition: all 1s;
+    }
+    /*
+    #sponsor-section .riga-1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1vw;
+        margin: auto;
+    }
+    #sponsor-section .riga-2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 1vw;
+        margin: auto;
+    }*/
 }
 
 #sponsor-section #sps-1 {
     background: url('/immagini/sponsors/bincosport.JPG') center;
-    background-size: 80px 80px;
+    background-size: 6vw 6vw;
     background-repeat: no-repeat;
 }
 
 #sponsor-section #sps-2 {
     background: url('/immagini/sponsors/BSAtech.jpg') center;
-    background-size: 80px 80px;
+    background-size: 6vw 6vw;
     background-repeat: no-repeat;
 }
 
 #sponsor-section #sps-3 {
     background: url('/immagini/sponsors/canellitech.jpg') center;
-    background-size: 50px 50px;
+    background-size: 4vw 4vw;
     background-repeat: no-repeat;
 }
 
 #sponsor-section #sps-4 {
     background: url('/immagini/sponsors/caponord.jpg') center;
-    background-size: 60px 60px;
+    background-size: 5vw 5vw;
     background-repeat: no-repeat;
 }
 
 #sponsor-section #sps-5 {
     background: url('/immagini/sponsors/lavanderia1h.jpg') center/cover;
-    background-size: 60px 60px;
+    background-size: 5vw 5vw;
     background-repeat: no-repeat;
 }
 
 #sponsor-section #sps-6 {
     background: url('/immagini/sponsors/puntobere.JPG') center/cover;
-    background-size: 100px 40px;
+    background-size: 7vw 3vw;
     background-repeat: no-repeat;
 }
 
 #sponsor-section #sps-7 {
     background: url('/immagini/sponsors/sagrin.JPG') center/cover;
-    background-size: 60px 60px;
+    background-size: 5vw 5vw;
     background-repeat: no-repeat;
 }
 
 #sponsor-section #sps-8 {
     background: url('/immagini/sponsors/rapetti-paolo-abbigliamenti.jpg') center/cover;
-    background-size: 50px 50px;
+    background-size: 4vw 4vw;
     background-repeat: no-repeat;
 }
 
 #sponsor-section #sps-9 {
     background: url('/immagini/sponsors/ebrille-industries.jpg') center/cover;
-    background-size: 80px 80px;
+    background-size: 6vw 6vw;
     background-repeat: no-repeat;
 }
 
 #sponsor-section #sps-10 {
     background: url('/immagini/sponsors/ottica-mali.jpg') center/cover;
-    background-size: 50px 50px;
+    background-size: 4vw 4vw;
     background-repeat: no-repeat;
 }
 
@@ -599,6 +1122,7 @@ a {
 
 #footer {
     background-color: #333;
+    font-size: 1.2vw;
 }
 
 #footer .container {
@@ -607,7 +1131,7 @@ a {
 }
 
 #footer .container div {
-    padding: 20px;
+    padding: 2vw;
     color: white;
     display: block;
     flex: auto;
@@ -619,17 +1143,14 @@ a {
 
 #footer #social {
     display: flex;
-    text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    padding: 0 1vw;
 }
 
-#footer #social p {
-    flex: 0.3;
-}
-
-#footer #social a {
-    flex: 0.1;
+#footer #social a img {
+    height: 2vw;
+    width: 2vw;
 }
 
 #footer #autore {
@@ -674,9 +1195,38 @@ a {
 
 #section-1-about #spazio-3 {
     background: url("/immagini/palla.jpg") no-repeat center;
-    background-size: 60% 100%;
+    background-size: 60% 90%;
     background-attachment: fixed;
 }
 
 
 /*-------------------------------------------------------------------------------------------------*/
+
+#section-1-scoiattoli {
+    background-color: darkgray;
+    color: red;
+    font-size: 2rem;
+    text-align: justify;
+    opacity: 0.9;
+}
+
+#section-1-scoiattoli .space {
+    background-origin: content-box;
+    height: 85vh;
+}
+
+#spazio-1-scoiattoli {
+    background: url("/immagini/minibasket/scoiattoli/scoiattoli-copertina.jpg") no-repeat center fixed;
+    background-size: 70% 100%;
+    background-color: white;
+}
+
+#section-1-scoiattoli .container {
+    color: black;
+    padding: 2rem;
+    margin: 1rem 1rem;
+}
+
+#section-1-scoiattoli .container h1 {
+    text-align: center;
+}
