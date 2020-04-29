@@ -9,6 +9,7 @@
     <script src="javas.js"></script>
     <link rel="icon" type="image/png" href="/immagini/BN logo.jpeg">
     <title>BASKET NIZZA | La dinastia</title>
+
 </head>
 
 <body>
@@ -17,32 +18,26 @@
         <div class="progress-container">
             <div class="progress-bar" id="myBar"></div>
         </div>
+        <script>
+        </script>
         <nav id="navbar">
-
             <div class="topnav" id="myTopnav">
-                <a href="index.html" id="primo">
-                    <img class="img-logo" src="immagini/BN logo.jpeg" alt="logo del Basket Nizza"> BASKET NIZZA
-                </a>
+                <a href="index.html" id="primo"><img class="img-logo" src="immagini/BN logo.jpeg" alt="logo del Basket Nizza" style="height: 30px; width: 30px;">BASKET NIZZA </a>
                 <div id="container">
                     <a href="index.html" class="active">Home</a>
-                    <!--<a href="#news">News</a>-->
                     <a href="about.html">About</a>
-                    <div class="dropdown">
-                        <button class="dropbtn">Senior <i class="fa fa-caret-down"></i></button>
-                        <div class="dropdown-content">
+                    <div class="dropdown"><button onclick=" toggleDrpdwn1()" class="dropbtn">Senior <i class="fa fa-caret-down"></i></button>
+                        <div class="dropdown-content" id="Drpdwn1">
                             <a href="#next-game">Prima squadra</a>
-                            <a href="giovanili.html">Seconda squadra</a>
-                        </div>
+                            <a href="giovanili.html">Seconda squadra</a></div>
                     </div>
-                    <div class="dropdown">
-                        <button class="dropbtn">Giovanili <i class="fa fa-caret-down"></i></button>
-                        <div class="dropdown-content">
+                    <div class="dropdown"><button onclick=" toggleDrpdwn2()" class="dropbtn">Giovanili <i class="fa fa-caret-down"></i></button>
+                        <div class="dropdown-content" id="Drpdwn2">
                             <a href="u18.html">Under 18</a>
                         </div>
                     </div>
-                    <div class="dropdown">
-                        <button class="dropbtn">Minibasket <i class="fa fa-caret-down"></i></button>
-                        <div class="dropdown-content">
+                    <div class="dropdown"><button onclick=" toggleDrpdwn3()" class="dropbtn">Minibasket <i class="fa fa-caret-down"></i></button>
+                        <div class="dropdown-content" id="Drpdwn3">
                             <a href="esordienti.html">Esordienti</a>
                             <a href="aquilotti.html">Aquilotti</a>
                             <a href="scoiattoli.html">Scoiattoli</a>
@@ -56,83 +51,91 @@
         </nav>
     </header>
 
-    <!-- Section-1 --
-    <section id="showcase">
-        <div class="container">
-            <h1><span class="color-primary">Chasing</span> perfection</h1>
-            <p><q>The most important thing is to try and inspire people so that they can be great in whatever they want to do</q> - <b class="color-primary">K. B.</b></p>
+    <section #id="stickers">
+        <button onclick="topFunction()" class="sticker" id="myBtn" title="Go to top">Top</button>
+        <div class="sticker" id="social-bar">
 
-            <a class="btn" href="about.html">About us</a>
-        </div>
-    </section>
-
-    <!-- Section-2-1 --
-    <section id="showcase-2-1">
-        <div class="container">
-
+            <a class="social" href="https://www.facebook.com/basketnizza1/" target="_blank" title="Visita la nosta pagina Fb"><img src="/immagini/icone social/fb.jpg" alt="icona Facebook"></a>
+            <a class="social" href="https://www.instagram.com/basketnizza/" target="_blank" title="Visita la nosta pagina IG"><img src="/immagini/icone social/IG.jpg" alt="icona Instagram"></a>
 
         </div>
     </section>
 
-    <!-- Section-2-2 -
-    <section id="showcase-2">
-        <div class="container">
-            <div class="image">
+    <!-- Slideshow -->
+    <section id="slideshow">
+        <div class="slideshow-container">
 
-            </div>
-            <div class="text">
-                <h1><span class="color-primary">Un canestro per la ricerca</span></h1>
-                <p>Siccome il <strong>BASKET NIZZA</strong> quest’anno non riesce a scendere in campo per l'annuale raccolta fondi a favore dell'<a id="ail" href="https://www.ail.it/">AIL Associazione Italiana contro 
-                    le Leucemie-linfomi e mieloma ONLUS</a> vendendo le <a id=ail href="https://www.ail.it/eventi-e-manifestazioni/uova-di-pasqua">Uova Di Pasqua</a>, abbiamo pensato di dare la possibilità, a chi volesse sostenere comunque la ricerca,
-                    attraverso questa <strong>raccolta fondi</strong>. Aiutateci a segnare il canestro più importante. Grazie!</p>
-
-                <b>-- > <a class="btn" href="https://www.gofundme.com/f/basket-nizza-per-l039ail?utm_source=whatsapp&utm_medium=chat&utm_campaign=p_cf+share-flow-1">Raccolta fondi</a> < --</b>
-
-                <p id="spazio">Se volete sapere qualcosa in più sugli impegni sociali della squadra</p>
-                <a class="btn-light-small" href="about.html">Impegni sociali</a>
-
+            <!-- 
+                <div class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="/immagini/BN x Ail-or.jpg">
+                
+            <div class="overlay-title">
+                <p>Rimaniamo a casa per il bene comune</p>
+                <p>insieme ce la faremo</p>
+                <p>forza italia</p>
             </div>
         </div>
-    </section>-->
+        -->
 
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 4</div>
+                <img src="/immagini/BNxAil-orizontale.jpg">
+                <div class="overlay-title">
+                    <h1><span class="color-primary">Un canestro per la ricerca</span></h1>
+                    <p>Siccome il <strong>BASKET NIZZA</strong> quest’anno non riesce a scendere in campo per l'annuale raccolta fondi a favore dell'<a id="ail" href="https://www.ail.it/">AIL Associazione Italiana contro 
+                        le Leucemie-linfomi e mieloma ONLUS</a> vendendo le <a id=ail href="https://www.ail.it/eventi-e-manifestazioni/uova-di-pasqua">Uova Di Pasqua</a>, abbiamo pensato di dare la possibilità, a chi volesse sostenere comunque la ricerca,
+                        attraverso questa <strong>raccolta fondi</strong>. Aiutateci a segnare il canestro più importante. Grazie!</p>
 
-    <!-- Slideshow container 
-    <div class="slideshow-container">
+                    <b><a class="btn-light-small" href="https://www.gofundme.com/f/basket-nizza-per-l039ail?utm_source=whatsapp&utm_medium=chat&utm_campaign=p_cf+share-flow-1">Raccolta fondi</a></b>
+                    <!-- 
+                    <p id="spazio">Se volete sapere qualcosa in più sugli impegni sociali della squadra</p>
+                    <a class="btn-light-small" href="about.html">Impegni sociali</a>
+                     -->
+                </div>
+            </div>
 
-        <!-- Full-width images with number and caption text 
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="/immagini/palla.jpg" style="width: 80vw; height: 90vh;">
-            <div class="text">Caption Text</div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 4</div>
+                <img src="/immagini/palla.jpg">
+                <div class="overlay-title">
+                    <h1><span class="color-primary">Chasing</span> perfection</h1>
+                    <p><q>The most important thing is to try and inspire people so that they can be great in whatever they want to do</q> - <b class="color-primary">K. B.</b></p>
+
+                    <b><a class="btn-light-small" href="about.html">About us</a></b>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="/immagini/giovanili/giovanili.jpg">
+            </div>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
         </div>
 
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="/immagini/BNxAil-orizontale.jpg" style="width: 80vw; height: 90vh;">
-            <div class="text">Caption Two</div>
-        </div>
 
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="/immagini/U18.jpg" style="width: 80vw; height: 90vh;">
-            <div class="text">Caption Three</div>
-        </div>
-
-        <!-- Next and previous buttons 
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="prev" onclick="plusSlides(-1)" onload="">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
 
-    <div style="text-align:center">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
--->
 
-    <!-- Section-3 -->
-    <section id="showcase-3">
+        <script>
+            var slideIndex = 1;
+            var timer = null;
+            showSlides(slideIndex);
+        </script>
+
+    </section>
+
+    <!-- Categories -->
+    <section id="categories">
         <!--<div class="container">-->
 
         <a class="box" id="box-1" href="campionati-segnior.html">
@@ -189,49 +192,26 @@
     </section>
 
     <!-- Roaster -->
-    <section id="roaster">
+    <section class="roaster">
 
         <p id="nome-sezione">ROSTER 2019/2020</p>
 
-        <div class="container-1">
-            <div class="riga-giocatori">
-                <div class="player" id="player-1">
+        <div class="row">
+            <div class="column-palyer">
+                <div class="card">
                     <div class="player-foto">
-                        <img src="/immagini/MJ.jpg" alt="bla bla">
+                        <img src="/immagini/MJ.jpg" alt="">
                         <div class="overlay">
                             <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
                         </div>
                     </div>
+
                     <p class="player-name">Nome Cognome</p>
+
                 </div>
-                <div class="player" id="player-2">
-                    <div class="player-foto">
-                        <img src="" alt="">
-                        <div class="overlay">
-                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
-                        </div>
-                    </div>
-                    <p class="player-name">Nome Cognome</p>
-                </div>
-                <div class="player" id="player-3">
-                    <div class="player-foto">
-                        <img src="" alt="">
-                        <div class="overlay">
-                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
-                        </div>
-                    </div>
-                    <p class="player-name">Nome Cognome</p>
-                </div>
-                <div class="player" id="player-4">
-                    <div class="player-foto">
-                        <img src="" alt="">
-                        <div class="overlay">
-                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
-                        </div>
-                    </div>
-                    <p class="player-name">Nome Cognome</p>
-                </div>
-                <div class="player" id="player-5">
+            </div>
+            <div class="column-palyer">
+                <div class="card">
                     <div class="player-foto">
                         <img src="" alt="">
                         <div class="overlay">
@@ -241,44 +221,8 @@
                     <p class="player-name">Nome Cognome</p>
                 </div>
             </div>
-            <div class="riga-giocatori">
-                <div class="player" id="player-6">
-                    <div class="player-foto">
-                        <img src="" alt="">
-                        <div class="overlay">
-                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
-                        </div>
-                    </div>
-                    <p class="player-name">Nome Cognome</p>
-                </div>
-                <div class="player" id="player-7">
-                    <div class="player-foto">
-                        <img src="" alt="">
-                        <div class="overlay">
-                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
-                        </div>
-                    </div>
-                    <p class="player-name">Nome Cognome</p>
-                </div>
-                <div class="player" id="player-8">
-                    <div class="player-foto">
-                        <img src="" alt="">
-                        <div class="overlay">
-                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
-                        </div>
-                    </div>
-                    <p class="player-name">Nome Cognome</p>
-                </div>
-                <div class="player" id="player-9">
-                    <div class="player-foto">
-                        <img src="" alt="">
-                        <div class="overlay">
-                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
-                        </div>
-                    </div>
-                    <p class="player-name">Nome Cognome</p>
-                </div>
-                <div class="player" id="player-10">
+            <div class="column-palyer">
+                <div class="card">
                     <div class="player-foto">
                         <img src="" alt="">
                         <div class="overlay">
@@ -288,8 +232,8 @@
                     <p class="player-name">Nome Cognome</p>
                 </div>
             </div>
-            <div class="riga-giocatori">
-                <div class="player" id="player-11">
+            <div class="column-palyer">
+                <div class="card">
                     <div class="player-foto">
                         <img src="" alt="">
                         <div class="overlay">
@@ -298,7 +242,9 @@
                     </div>
                     <p class="player-name">Nome Cognome</p>
                 </div>
-                <div class="player" id="player-12">
+            </div>
+            <div class="column-palyer">
+                <div class="card">
                     <div class="player-foto">
                         <img src="" alt="">
                         <div class="overlay">
@@ -307,7 +253,9 @@
                     </div>
                     <p class="player-name">Nome Cognome</p>
                 </div>
-                <div class="player" id="player-13">
+            </div>
+            <div class="column-palyer">
+                <div class="card">
                     <div class="player-foto">
                         <img src="" alt="">
                         <div class="overlay">
@@ -316,7 +264,9 @@
                     </div>
                     <p class="player-name">Nome Cognome</p>
                 </div>
-                <div class="player" id="player-14">
+            </div>
+            <div class="column-palyer">
+                <div class="card">
                     <div class="player-foto">
                         <img src="" alt="">
                         <div class="overlay">
@@ -325,7 +275,9 @@
                     </div>
                     <p class="player-name">Nome Cognome</p>
                 </div>
-                <div class="player" id="player-15">
+            </div>
+            <div class="column-palyer">
+                <div class="card">
                     <div class="player-foto">
                         <img src="" alt="">
                         <div class="overlay">
@@ -333,61 +285,204 @@
                         </div>
                     </div>
                     <p class="player-name">Nome Cognome</p>
+                </div>
+            </div>
+            <div class="column-palyer">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                        <div class="overlay">
+                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
+                        </div>
+                    </div>
+                    <p class="player-name">Nome Cognome</p>
+                </div>
+            </div>
+            <div class="column-palyer">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                        <div class="overlay">
+                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
+                        </div>
+                    </div>
+                    <p class="player-name">Nome Cognome</p>
+                </div>
+            </div>
+            <div class="column-palyer">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                        <div class="overlay">
+                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
+                        </div>
+                    </div>
+                    <p class="player-name">Nome Cognome</p>
+                </div>
+            </div>
+            <div class="column-palyer">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                        <div class="overlay">
+                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
+                        </div>
+                    </div>
+                    <p class="player-name">Nome Cognome</p>
+                </div>
+            </div>
+            <div class="column-palyer">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                        <div class="overlay">
+                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
+                        </div>
+                    </div>
+                    <p class="player-name">Nome Cognome</p>
+                </div>
+            </div>
+            <div class="column-palyer">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                        <div class="overlay">
+                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
+                        </div>
+                    </div>
+                    <p class="player-name">Nome Cognome</p>
+                </div>
+            </div>
+            <div class="column-palyer">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                        <div class="overlay">
+                            <pre>#Numero<br>Ruolo<br>Data di nascita</pre>
+                        </div>
+                    </div>
+                    <p class="player-name">Nome Cognome</p>
+                </div>
+            </div>
+
+        </div>
+
+        <p id="nome-sezione">STAFF TECNICO</p>
+
+        <div class="row">
+            <div class="column-staff">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                    </div>
+                    <p class="player-name">Nome Cognome</p>
+                </div>
+            </div>
+
+            <div class="column-staff">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                    </div>
+                    <p class="player-name">Nome Cognome</p>
+                </div>
+            </div>
+
+            <div class="column-staff">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                    </div>
+                    <p class="player-name">Nome Cognome</p>
+                </div>
+            </div>
+
+            <div class="column-staff">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                    </div>
+                    <p class="player-name">Nome Cognome - 4</p>
+                </div>
+            </div>
+
+            <div class="column-staff" id="staff-5">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                    </div>
+                    <p class="player-name">Nome Cognome - 5</p>
+                </div>
+            </div>
+
+            <div class="column-staff" id="staff-6">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                    </div>
+                    <p class="player-name">Nome Cognome - 6</p>
+                </div>
+            </div>
+
+            <div class="column-staff" id="staff-7">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                    </div>
+                    <p class="player-name">Nome Cognome - 7</p>
+                </div>
+            </div>
+
+            <div class="column-staff" id="staff-8">
+                <div class="card">
+                    <div class="player-foto">
+                        <img src="" alt="">
+                    </div>
+                    <p class="player-name">Nome Cognome - 8</p>
                 </div>
             </div>
         </div>
 
-        <p id="staff-tecnico">STAFF TECNICO</p>
 
-        <div class="container-2">
 
-            <div class="staff">
-                <div class="player-foto">
-                    <img src="" alt="">
-                </div>
-                <p class="player-name">Allenatore</p>
-            </div>
-            <div class="staff">
-                <div class="player-foto">
-                    <img src="" alt="">
-                </div>
-                <p class="player-name">Assistente</p>
-            </div>
-            <div class="staff">
-                <div class="player-foto">
-                    <img src="" alt="">
-                </div>
-                <p class="player-name">Dirigente</p>
-            </div>
-            <div class="staff">
-                <div class="player-foto">
-                    <img src="" alt="">
-                </div>
-                <p class="player-name">Dirigente</p>
-            </div>
-
-        </div>
     </section>
 
 
     <!-- Sponsor -->
     <section id="sponsor-section">
-        <div class="foto">
 
+        <div class="container">
             <a class="sponsor riga-1" id="sps-1" target="_blank" href="http://www.bincosport.it/" title="Visita il sito di Binco Sport"></a>
-            <a class="sponsor riga-1" id="sps-2" target="_blank" href="https://www.technologybsa.com/" title="Visita il sito di BSA Technology"></a>
-            <a class="sponsor riga-1" id="sps-3" target="_blank" href="http://www.canellitech.com/" title="Visita il sito di Canelli Tech"></a>
-            <a class="sponsor riga-1" id="sps-4" target="_blank" href="https://www.facebook.com/pubcaponord/" title="Visita la pagina facebook di Risto-Pub Capo Nord"></a>
-
-
-            <a class="sponsor riga-2" id="sps-5" target="_blank" href="https://www.facebook.com/lavanderia1hnizza" title="Visita la pagina facebook di Lavanderia 1H"></a>
-            <a class="sponsor riga-2" id="sps-6" target="_blank" href="https://www.puntobere.it/" title="Visita il sito di Punto Bere"></a>
-            <a class="sponsor riga-2" id="sps-7" target="_blank" href="http://www.sagrin.it/" title="Visita il sito di Sagrin"></a>
-            <a class="sponsor riga-2" id="sps-8" target="_blank" href="https://www.facebook.com/AbbigliamentoRapetti/" title="Visita la pagina facebook di Abbigliamento Rapetti"></a>
-            <a class="sponsor riga-2" id="sps-9" target="_blank" href="http://www.ebrille.it/" title="Visita il sito di Ebrille"></a>
-            <a class="sponsor riga-2" id="sps-10" target="_blank" href="https://www.otticamali.it/" title="Visita il sito di OTTICA MALI'"></a>
-
         </div>
+        <div class="container">
+            <a class="sponsor riga-1" id="sps-2" target="_blank" href="https://www.technologybsa.com/" title="Visita il sito di BSA Technology"></a>
+        </div>
+        <div class="container">
+            <a class="sponsor riga-1" id="sps-3" target="_blank" href="http://www.canellitech.com/" title="Visita il sito di Canelli Tech"></a>
+        </div>
+        <div class="container">
+            <a class="sponsor riga-1" id="sps-4" target="_blank" href="https://www.facebook.com/pubcaponord/" title="Visita la pagina facebook di Risto-Pub Capo Nord"></a>
+        </div>
+
+        <div class="container">
+            <a class="sponsor riga-2" id="sps-5" target="_blank" href="https://www.facebook.com/lavanderia1hnizza" title="Visita la pagina facebook di Lavanderia 1H"></a>
+        </div>
+        <div class="container">
+            <a class="sponsor riga-2" id="sps-6" target="_blank" href="https://www.puntobere.it/" title="Visita il sito di Punto Bere"></a>
+        </div>
+        <div class="container">
+            <a class="sponsor riga-2" id="sps-7" target="_blank" href="http://www.sagrin.it/" title="Visita il sito di Sagrin"></a>
+        </div>
+        <div class="container">
+            <a class="sponsor riga-2" id="sps-8" target="_blank" href="https://www.facebook.com/AbbigliamentoRapetti/" title="Visita la pagina facebook di Abbigliamento Rapetti"></a>
+        </div>
+        <div class="container">
+            <a class="sponsor riga-2" id="sps-9" target="_blank" href="http://www.ebrille.it/" title="Visita il sito di Ebrille"></a>
+        </div>
+        <div class="container">
+            <a class="sponsor riga-2" id="sps-10" target="_blank" href="https://www.otticamali.it/" title="Visita il sito di OTTICA MALI'"></a>
+        </div>
+
     </section>
 
 
