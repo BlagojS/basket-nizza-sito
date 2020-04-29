@@ -967,7 +967,7 @@ a {
 }
 
 #sponsor-section .container #sps-1 {
-    background: url('immagini/sponsors/bincosport.JPG') center;
+    background: url("/immagini/sponsors/bincosport.JPG") center;
     background-size: 6vw 6vw;
     background-repeat: no-repeat;
     height: 6vw;
@@ -975,55 +975,55 @@ a {
 }
 
 #sps-2 {
-    background: url('immagini/sponsors/BSAtech.jpg') center;
+    background: url("/immagini/sponsors/BSAtech.jpg") center;
     background-size: 6vw 6vw;
     background-repeat: no-repeat;
 }
 
 #sps-3 {
-    background: url('immagini/sponsors/canellitech.jpg') center;
+    background: url("/immagini/sponsors/canellitech.jpg") center;
     background-size: 4vw 4vw;
     background-repeat: no-repeat;
 }
 
 #sps-4 {
-    background: url('immagini/sponsors/caponord.jpg') center;
+    background: url("/immagini/sponsors/caponord.jpg") center;
     background-size: 5vw 5vw;
     background-repeat: no-repeat;
 }
 
 #sps-5 {
-    background: url('immagini/sponsors/lavanderia1h.jpg') center/cover;
+    background: url("/immagini/sponsors/lavanderia1h.jpg") center/cover;
     background-size: 5vw 5vw;
     background-repeat: no-repeat;
 }
 
 #sps-6 {
-    background: url('immagini/sponsors/puntobere.JPG') center/cover;
+    background: url("/immagini/sponsors/puntobere.JPG") center/cover;
     background-size: 7vw 3vw;
     background-repeat: no-repeat;
 }
 
 #sps-7 {
-    background: url('immagini/sponsors/sagrin.JPG') center/cover;
+    background: url("/immagini/sponsors/sagrin.JPG") center/cover;
     background-size: 5vw 5vw;
     background-repeat: no-repeat;
 }
 
 #sps-8 {
-    background: url('immagini/sponsors/rapetti-paolo-abbigliamenti.jpg') center/cover;
+    background: url("immagini/sponsors/rapetti-paolo-abbigliamenti.jpg") center/cover;
     background-size: 4vw 4vw;
     background-repeat: no-repeat;
 }
 
 #sps-9 {
-    background: url('immagini/sponsors/ebrille-industries.jpg') center/cover;
+    background: url("immagini/sponsors/ebrille-industries.jpg") center/cover;
     background-size: 6vw 6vw;
     background-repeat: no-repeat;
 }
 
 #sps-10 {
-    background: url('immagini/sponsors/ottica-mali.jpg') center/cover;
+    background: url("immagini/sponsors/ottica-mali.jpg") center/cover;
     background-size: 4vw 4vw;
     background-repeat: no-repeat;
     border-right: none;
@@ -1089,11 +1089,11 @@ a {
 
 @media screen and (min-width:1100px) {
     #spazio-1 {
-        background: url("immagini/BN\ logo.jpeg") no-repeat center fixed;
+        background: url("/immagini/BN\ logo.jpeg") no-repeat center fixed;
         background-size: 35% 60%;
     }
     #spazio-2 {
-        background: url("immagini/minibasket.jpg") no-repeat center;
+        background: url("/immagini/minibasket.jpg") no-repeat center;
         background-size: 60% 100%;
         background-attachment: fixed;
     }
@@ -1101,11 +1101,11 @@ a {
 
 @media screen and (max-width:1100px) {
     #spazio-1 {
-        background: url("immagini/BN\ logo.jpeg") no-repeat center fixed;
+        background: url("/immagini/BN\ logo.jpeg") no-repeat center fixed;
         background-size: 80% 50%;
     }
     #spazio-2 {
-        background: url("immagini/minibasket.jpg") no-repeat center fixed;
+        background: url("/immagini/minibasket.jpg") no-repeat center fixed;
         background-size: 100% 60%;
     }
 }
@@ -1123,7 +1123,7 @@ a {
 }*/
 
 #spazio-3 {
-    background: url("immagini/palla.jpg") no-repeat center;
+    background: url("/immagini/palla.jpg") no-repeat center;
     background-size: 60% 90%;
     background-attachment: fixed;
 }
@@ -1326,7 +1326,7 @@ input[type=submit]:hover {
         font-size: 3vw;
     }
     #spazio-1-scoiattoli {
-        background: url("immagini/minibasket/scoiattoli/scoiattoli-copertina.jpg") no-repeat center fixed;
+        background: url("/immagini/minibasket/scoiattoli/scoiattoli-copertina.jpg") no-repeat center fixed;
         background-size: 140% 70%;
         background-color: black;
         height: 80vh;
@@ -1384,7 +1384,7 @@ input[type=submit]:hover {
         margin-left: 20vw;
     }
     #spazio-1-scoiattoli {
-        background: url("immagini/minibasket/scoiattoli/scoiattoli-copertina.jpg") no-repeat center fixed;
+        background: url("/immagini/minibasket/scoiattoli/scoiattoli-copertina.jpg") no-repeat center fixed;
         background-size: 70% 100%;
         background-color: black;
         height: 85vh;
@@ -1396,7 +1396,7 @@ input[type=submit]:hover {
 
 @media screen and (max-width:1000px) {
     #spazio-1-aquilotti {
-        background: url("immagini/minibasket/aquilotti/aquilotti-copertina.jpg") no-repeat center fixed;
+        background: url("/immagini/minibasket/aquilotti/aquilotti-copertina.jpg") no-repeat center fixed;
         background-size: 150% 60%;
         background-color: black;
         height: 80vh;
@@ -1405,7 +1405,7 @@ input[type=submit]:hover {
 
 @media screen and (min-width:1000px) {
     #spazio-1-aquilotti {
-        background: url("immagini/minibasket/aquilotti/aquilotti-copertina.jpg") no-repeat center fixed;
+        background: url("/immagini/minibasket/aquilotti/aquilotti-copertina.jpg") no-repeat center fixed;
         background-size: 70% 110%;
         background-color: black;
         height: 85vh;
