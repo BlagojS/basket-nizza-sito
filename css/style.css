@@ -643,10 +643,10 @@ a {
 
 @keyframes animazione-box-1 {
     from {
-        background: url("immagini/segnior-bw.jpg") center/cover;
+        background: url("//immagini/segnior-bw.jpg") center/cover;
     }
     to {
-        background: url("immagini/segnior.jpg") center/cover;
+        background: url("//immagini/segnior.jpg") center/cover;
     }
 }
 
