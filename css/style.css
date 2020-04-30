@@ -1,953 +1,975 @@
-/*-----      ----------    -----    Main    -----    ----------        -----*/
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html,
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #333;
-    scroll-behavior: smooth;
-}
-
-a {
-    color: #fff;
-    text-decoration: none;
-}
-
-
-/*-----      ----------    -----    Utility    -----    ----------        -----*/
-
-.btn {
-    display: inline-block;
-    font-size: 1.3rem;
-    color: #fff;
-    background: #333;
-    padding: 0.8rem 1rem;
-    border: none;
-    transition: 0.5s ease;
-}
-
-.btn:hover {
-    background: #555;
-    color: orange;
-    transition: 0.5s ease;
-}
-
-.btn-light {
-    display: inline-block;
-    font-size: 1.3rem;
-    color: orange;
-    background: #555;
-    padding: 0.8rem 1rem;
-    border: none;
-    transition: 0.5s ease;
-}
-
-.btn-light:hover {
-    background: orange;
-    color: #555;
-    transition: 0.5s ease;
-}
-
-.btn-light-small {
-    display: inline-block;
-    font-size: 1.5vw;
-    color: white;
-    background: #555;
-    padding: 0.5vw 0.5vw;
-    border: none;
-    transition: 0.5s ease;
-}
-
-.btn-light-small:hover {
-    background: orange;
-    color: #333;
-    transition: 0.5s ease;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.color-primary {
-    color: orange;
-}
-
-.sticker {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Fixed/sticky position */
-    bottom: 30%;
-    /* Place the button at the bottom of the page */
-    left: 0;
-    /* Place the button 30px from the right */
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Set a background color */
-    color: white;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 1vw;
-    /* Some padding */
-    border-radius: 10px;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    /* Rounded corners */
-    font-size: 18px;
-    /* Increase font size */
-    transition: all 0.5s ease;
-}
-
-.sticker:hover {
-    background-color: black;
-    /* Add a dark-grey background on hover */
-}
-
-#social-bar {
-    position: fixed;
-    left: 0;
-    height: 80px;
-    top: 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    transition: all 0.5s ease;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    visibility: hidden;
-}
-
-
-/*-----      ----------    -----    Navbar and Dropdown    -----    ----------        -----*/
-
-#navbar {
-    border-bottom: 0.5vw solid #555;
-}
-
-.topnav {
-    overflow: hidden;
-    background-color: black;
-    color: #f2f2f2;
-}
-
-.topnav a {
-    color: #f2f2f2;
-    float: left;
-    display: block;
-    text-align: center;
-    padding: 18px 20px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-.topnav .active {
-    text-decoration: none;
-    background-color: #555;
-    color: orange;
-    transition: all 0.5s ease-in-out;
-}
-
-.topnav .icon {
-    display: none;
-}
-
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
-.dropdown .dropbtn {
-    font-size: 17px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 18px 20px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-
-.dropdown-content,
-.dropdown-content a::after {
-    display: none;
-    position: absolute;
-    background-color: #555;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: white;
-    padding: 16px 20px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    min-width: 130px;
-}
-
-.topnav a:hover,
-.dropdown:hover .dropbtn {
-    background-color: #555;
-    color: orange;
-    transition: all 0.5s ease-in-out;
-}
-
-.dropdown-content a:hover {
-    background-color: white;
-    color: black;
-}
-
-@media screen and (min-width:800px) {
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-}
-
-.show {
-    display: block;
-}
-
-#primo {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 1vw;
-    transition: all 1s;
-    font-weight: bold;
-    padding: 14px 15px;
-}
-
-#navbar #primo img {
-    width: 30px;
-    height: 30px;
-    margin-right: 0.5vw;
-}
-
-@media screen and (min-width:800px) {
-    #primo:hover {
-        background-color: #555;
-        color: black;
-        transition: all 0.5s;
-    }
-    .dropdown-content {
-        opacity: 0;
-        animation: over-anim 0.5s forwards ease;
-    }
-}
-
-@keyframes over-anim {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-#container {
-    float: right;
-}
-
-@media screen and (max-width: 800px) {
-    .topnav a:not(:first-child),
-    .dropdown .dropbtn {
-        display: none;
-    }
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
-    #primo {
-        display: none;
-    }
-    #container {
-        float: none;
-    }
-    .dropdown:active .dropdown-content {
-        display: block;
-    }
-    .dropdown-content,
-    .dropdown-content a {
-        background-color: white;
-        color: #000;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .topnav.responsive {
-        position: relative;
-    }
-    .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-    .topnav.responsive .dropdown {
-        float: none;
-    }
-    .topnav.responsive .dropdown-content {
-        position: relative;
-    }
-    .topnav.responsive .dropdown .dropbtn {
-        display: block;
-        width: 100%;
-        text-align: left;
-    }
-}
-
-
-/*-------------scroll idicator ----------------------*/
-
-
-/* The progress container (grey background) */
-
-.progress-container {
-    width: 100%;
-    height: 8px;
-    background: transparent;
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-}
-
-
-/* The progress bar (scroll indicator) */
-
-.progress-bar {
-    height: 8px;
-    background: orange;
-    width: 0%;
-}
-
-@media screen and (max-width: 800px) {
-    .progress-bar {
-        height: 4px;
-    }
-}
-
-
-/*-----      ----------    -----    Slideshow    -----    ----------        -----*/
-
-#slideshow {
-    position: relative;
-    background-color: black;
-}
-
-#slideshow .mySlides {
-    display: none;
-}
-
-#slideshow .mySlides img {
-    width: 100%;
-    margin: auto;
-    vertical-align: middle;
-    max-height: 800px;
-}
-
-
-/* Slideshow container */
-
-#slideshow .slideshow-container {
-    max-height: 1000px;
-    position: relative;
-    margin: auto;
-    min-height: 50%;
-}
-
-@media screen and (min-width: 950px) {
-    .slideshow-container {
-        min-height: 76vh;
-    }
-}
-
-
-/* Number text (1/3 etc) */
-
-.numbertext {
-    color: white;
-    font-size: 2vw;
-    padding: 1vw 1vw;
-    position: absolute;
-    top: 0;
-    left: 47%;
-}
-
-
-/* The dots/bullets/indicators */
-
-.dot {
-    height: 2vw;
-    width: 2vw;
-    margin: 1vw 0.5vw;
-    background-color: #555;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active-dot {
-    background-color: orange;
-}
-
-
-/* Fading animation */
-
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
-}
-
-
-/* On smaller screens, decrease text size */
-
-@media only screen and (max-width: 300px) {
-    .text {
-        font-size: 11px
-    }
-}
-
-#slideshow .overlay-title {
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgb(0, 0, 0));
-    color: #f1f1f1;
-    width: 100%;
-    min-height: 40%;
-    transition: .5s ease;
-    opacity: 0;
-    color: white;
-    font-size: 2vw;
-    padding: 1vw 0;
-    height: auto;
-    text-align: center;
-    animation: over-anim 1s 0.5s forwards;
-}
-
-#slideshow .overlay-title p {
-    padding: 1vw;
-}
-
-@keyframes over-anim {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
-/* Next & previous buttons */
-
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 2vw;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-
-/* Position the "next button" to the right */
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-
-/* On hover, add a black background color with a little bit see-through */
-
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-
-/*-----      ----------    -----    Section-3    -----    ----------        -----*/
-
-
-/* design PC */
-
-#categories {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 3vw 0;
-    background-color: white;
-}
-
-
-/* design tablet e cellulare */
-
-@media screen and (max-width: 1200px) {
-    #categories {
-        flex-direction: column;
-    }
-}
-
-
-/* design principale dei box */
-
-.box {
-    background-color: #333;
-    border: 3px solid #555;
-    font-size: 6vh;
-    text-align: center;
-    color: orange;
-    transition: all 1s ease;
-    margin: 1vw 0 1vw 0;
-}
-
-
-/* animazione hover per PC */
-
-@media screen and (min-width: 1200px) {
-    .box:hover {
-        border: 3px solid orange;
-        transition: all 1s ease;
-    }
-}
-
-
-/* design per tablet e cellulare */
-
-@media screen and (max-width: 1200px) {
-    .box {
-        width: 100%;
-        height: 30%;
-        font-size: 4vh;
-    }
-}
-
-@keyframes animazione-box {
-    from {
-        border: 3px solid #555;
-    }
-    to {
-        border: 3px solid orange;
-    }
-}
-
-
-/* alineamento orizontale per PC */
-
-.sector-name {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 340px;
-    height: 220px;
-    transition: all 1s ease;
-}
-
-
-/* animazione hover per PC */
-
-@media screen and (min-width: 1200px) {
-    .sector-name:hover {
-        opacity: 0.2;
-        width: 520px;
-        height: 300px;
-        transition: all 1s ease;
-    }
-}
-
-
-/* alineamento verticale per tabelt e telefono */
-
-@media screen and (max-width: 1200px) {
-    .sector-name {
-        width: 100vw;
-        height: 25vw;
-    }
-}
-
-
-/* animazione per tablet e telefono */
-
-@media screen and (max-width: 1200px) {
-    #box-1 {
-        animation: animazione-box-1 1.5s 3s infinite alternate, animazione-box 1.5s 3s infinite alternate;
-    }
-    #box-2 {
-        animation: animazione-box-2 1.5s 4s infinite alternate, animazione-box 1.5s 4s infinite alternate;
-    }
-    #box-3 {
-        animation: animazione-box-3 1.5s 5s infinite alternate, animazione-box 1.5s 5s infinite alternate;
-    }
-}
-
-@keyframes animazione-opacity {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0.2;
-    }
-}
-
-@keyframes animazione-box-1 {
-    from {
-        background: url("//immagini/segnior-bw.jpg") center/cover;
-    }
-    to {
-        background: url("//immagini/segnior.jpg") center/cover;
-    }
-}
-
-@keyframes animazione-box-2 {
-    from {
-        background: url("immagini/giovanili/giovanili-bw.jpg") center/cover;
-    }
-    to {
-        background: url("immagini/giovanili/giovanili.jpg") center/cover;
-    }
-}
-
-@keyframes animazione-box-3 {
-    from {
-        background: url("immagini/minibasket/minibasket-bw.jpg") center/cover;
-    }
-    to {
-        background: url("immagini/minibasket/minibasket.jpg") center/cover;
-    }
-}
-
-#box-1 {
-    background: url("immagini/segnior-bw.jpg") center/cover;
-    transition: all 1s;
-}
-
-#box-2 {
-    background: url("immagini/giovanili/giovanili-bw.jpg") center/cover;
-    transition: all 1s;
-}
-
-#box-3 {
-    background: url("immagini/minibasket/minibasket-bw.jpg") center/cover;
-    transition: all 1s;
-}
-
-@media screen and (min-width: 1200px) {
-    #box-1:hover {
-        background: url("immagini/segnior.jpg") center/cover;
-        transition: all 1s;
-    }
-    #box-2:hover {
-        background: url("immagini/giovanili/giovanili.jpg") center/cover;
-        transition: all 1s;
-    }
-    #box-3:hover {
-        background: url("immagini/minibasket/minibasket.jpg") center/cover;
-        transition: all 1s;
-    }
-}
-
-
-/*-----      ----------    -----    Next-game    -----    ----------        -----*/
-
-#next-game {
-    background-color: gray;
-    background: url("immagini/campo.jpg") center center/cover;
-    /*background-attachment: fixed;*/
-    color: #fff;
-}
-
-#next-game .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.team {
-    display: flex;
-    padding: 1vw 4vw;
-    align-items: center;
-    justify-content: center;
-}
-
-.team-name {
-    font-size: 3vw;
-    margin: 1vw 0;
-}
-
-.team-logo {
-    height: 7vw;
-    width: 7vw;
-    padding: 1vw;
-    margin: auto;
-}
-
-#versus p {
-    font-size: 6vw;
-    font-weight: bold;
-    color: orange;
-}
-
-#game-info {
-    display: flex;
-    flex-direction: row;
-    font-size: 2vw;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-#game-info p {
-    margin: 0 2vw;
-}
-
-#indication {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2vw;
-}
-
-#demo {
-    font-size: 2vw;
-    text-align: center;
-    padding-bottom: 1vw;
-}
-
-
-/*-----      ----------    -----    Roaster    -----    ----------        -----*/
-
-.roaster {
-    font-size: 1.5vw;
-    background-color: white;
-    border-bottom: 1.5vw solid darkgray;
-    box-sizing: border-box;
-}
-
-.roaster #nome-sezione {
-    text-align: center;
-    font-size: 3vw;
-    font-weight: bold;
-    padding: 1vw;
-    background-color: darkgray;
-}
-
-.column-palyer {
-    box-sizing: border-box;
-    float: left;
-    width: 20%;
-    margin-bottom: 1vw;
-    padding: 1vw 1vw;
-}
-
-.column-staff {
-    box-sizing: border-box;
-    float: left;
-    width: 25%;
-    margin-bottom: 1vw;
-    padding: 1vw 1vw;
-}
-
-#staff-5,
-#staff-8 {
-    visibility: hidden;
-}
-
-@media screen and (max-width: 1000px) {
-    .column-palyer {
-        width: 25%;
-    }
-    .column-staff {
-        width: 25%;
-    }
-    .player-foto {
-        min-height: 18vw;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .column-palyer {
-        width: 33.3%;
-    }
-    .column-staff {
-        width: 33.3%;
-    }
-    .player-foto {
-        min-height: 26vw;
-    }
-    #staff-5 {
-        visibility: visible;
-    }
-    #staff-7,
-    #staff-8 {
-        display: none;
-    }
-}
-
-.column-palyer:before,
-.column-palyer:after {
-    box-sizing: inherit;
-}
-
-.column-staff:before,
-.column-staff:after {
-    box-sizing: inherit;
-}
-
-.player-foto {
-    position: relative;
-    background: url("immagini/icon-bb-player.jpg") center/cover;
-    background-size: 100% 80%;
-    background-repeat: no-repeat;
-    color: white;
-    transition: all 1s;
-}
-
-@media screen and (min-width:1000px) {
-    .player-foto:hover .overlay {
-        height: 100%;
-        transition: all 1s;
-    }
-}
-
-.player-foto img {
-    min-height: 15vw;
-    width: 100%;
-}
-
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    color: white;
-    font-size: 1.5vw;
-    text-align: center;
-    transition: 1s ease;
-}
-
-.player-foto p {
-    transition: all 1s;
-}
-
-.player-name {
-    text-align: center;
-    font-size: 1.5vw;
-    padding: 1vw;
-}
-
-#roaster #staff-tecnico {
-    width: 100%;
-    text-align: center;
-    font-size: 3vw;
-    font-weight: bold;
-    padding: 0.5vw;
-    background-color: darkgray;
-}
-
-.staff {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 0.5vw 0 1vw 0;
-}
-
-
-/*-----      ----------    -----    Sponsor-section    -----    ----------        -----*/
-
-#sponsor-section {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0.5vw 0.5vw;
-    background-color: #fff;
-}
-
-#sponsor-section .container {
-    height: auto;
-    width: 7vw;
-    padding: 0.5vw 1vw;
-    display: flex;
-    border-width: 1px;
-    border-style: solid;
-    border-image: linear-gradient( to bottom, white, black, white) 1 100%;
-    border-left: none;
-}
-
-#sponsor-section .container:last-child {
-    border: none;
-}
-
-#sponsor-section .sponsor {
-    height: 6vw;
-    width: 6vw;
-    padding: 0.5vw 1vw;
-    /*border-right: 1 px solid linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.5));*/
-    /*border-right: 1px solid black;*/
-}
-
-@media screen and (min-width:1100px) {
-    #sponsor-section .sponsor:hover {
-        transform: rotateY(360deg);
-        transition: all 1s;
-    }
-    /*
+        /*-----      ----------    -----    Main    -----    ----------        -----*/
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        /*-----      ----------    -----    Utility    -----    ----------        -----*/
+        
+        .btn {
+            display: inline-block;
+            font-size: 1.3rem;
+            color: #fff;
+            background: #333;
+            padding: 0.8rem 1rem;
+            border: none;
+            transition: 0.5s ease;
+        }
+        
+        .btn:hover {
+            background: #555;
+            color: orange;
+            transition: 0.5s ease;
+        }
+        
+        .btn-light {
+            display: inline-block;
+            font-size: 1.3rem;
+            color: orange;
+            background: #555;
+            padding: 0.8rem 1rem;
+            border: none;
+            transition: 0.5s ease;
+        }
+        
+        .btn-light:hover {
+            background: orange;
+            color: #555;
+            transition: 0.5s ease;
+        }
+        
+        .btn-light-small {
+            display: inline-block;
+            font-size: 1.5vw;
+            color: white;
+            background: #555;
+            padding: 0.5vw 0.5vw;
+            border: none;
+            transition: 0.5s ease;
+            border-radius: 5px;
+        }
+        
+        .btn-light-small:hover {
+            background: orange;
+            color: #333;
+            transition: 0.5s ease;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .color-primary {
+            color: orange;
+        }
+        
+        .sticker {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 30%;
+            /* Place the button at the bottom of the page */
+            left: 0;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 1vw;
+            /* Some padding */
+            border-radius: 10px;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            /* Rounded corners */
+            font-size: 18px;
+            /* Increase font size */
+            transition: all 0.5s ease;
+        }
+        
+        .sticker:hover {
+            background-color: black;
+            /* Add a dark-grey background on hover */
+        }
+        
+        #social-bar {
+            position: fixed;
+            left: 0;
+            height: 80px;
+            bottom: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            transition: all 0.5s ease;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            visibility: hidden;
+        }
+        /*-----      ----------    -----    Navbar and Dropdown    -----    ----------        -----*/
+        
+        #navbar {
+            border-bottom: 0.5vw solid #555;
+        }
+        
+        .topnav {
+            overflow: hidden;
+            background-color: black;
+            color: #f2f2f2;
+        }
+        
+        .topnav a {
+            color: #f2f2f2;
+            float: left;
+            display: block;
+            text-align: center;
+            padding: 18px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        
+        .topnav .active {
+            text-decoration: none;
+            background-color: #555;
+            color: orange;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .topnav .icon {
+            display: none;
+        }
+        
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        
+        .dropdown .dropbtn {
+            font-size: 17px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 18px 20px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        
+        .dropdown-content,
+        .dropdown-content a::after {
+            display: none;
+            position: absolute;
+            background-color: #555;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 16px 20px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            min-width: 130px;
+        }
+        
+        .topnav a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #555;
+            color: orange;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: white;
+            color: black;
+        }
+        
+        @media screen and (min-width:800px) {
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        }
+        
+        .show {
+            display: block;
+        }
+        
+        #primo {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 1vw;
+            transition: all 1s;
+            font-weight: bold;
+            padding: 14px 15px;
+        }
+        
+        #navbar #primo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 0.5vw;
+        }
+        
+        @media screen and (min-width:800px) {
+            #primo:hover {
+                background-color: #555;
+                color: black;
+                transition: all 0.5s;
+            }
+            .dropdown-content {
+                opacity: 0;
+                animation: over-anim 0.5s forwards ease;
+            }
+        }
+        
+        @keyframes over-anim {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        #container {
+            float: right;
+        }
+        
+        @media screen and (max-width: 800px) {
+            .topnav a:not(:first-child),
+            .dropdown .dropbtn {
+                display: none;
+            }
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+            #primo {
+                display: none;
+            }
+            #container {
+                float: none;
+            }
+            .dropdown:active .dropdown-content {
+                display: block;
+            }
+            .dropdown-content,
+            .dropdown-content a {
+                background-color: white;
+                color: #000;
+            }
+        }
+        
+        @media screen and (max-width: 800px) {
+            .topnav.responsive {
+                position: relative;
+            }
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            .topnav.responsive .dropdown {
+                float: none;
+            }
+            .topnav.responsive .dropdown-content {
+                position: relative;
+            }
+            .topnav.responsive .dropdown .dropbtn {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+        /*-------------scroll idicator ----------------------*/
+        /* The progress container (grey background) */
+        
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: transparent;
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+        }
+        /* The progress bar (scroll indicator) */
+        
+        .progress-bar {
+            height: 8px;
+            background: orange;
+            width: 0%;
+        }
+        
+        @media screen and (max-width: 800px) {
+            .progress-bar {
+                height: 4px;
+            }
+        }
+        /*-----      ----------    -----    Slideshow    -----    ----------        -----*/
+        
+        #slideshow {
+            position: relative;
+            background-color: black;
+        }
+        
+        #slideshow .mySlides {
+            display: none;
+        }
+        
+        #slideshow .mySlides img {
+            width: 100%;
+            margin: auto;
+            vertical-align: middle;
+            max-height: 800px;
+        }
+        /* Slideshow container */
+        
+        #slideshow .slideshow-container {
+            max-height: 1000px;
+            position: relative;
+            margin: auto;
+            min-height: 50%;
+        }
+        
+        @media screen and (min-width: 950px) {
+            .slideshow-container {
+                min-height: 76vh;
+            }
+        }
+        /* Number text (1/3 etc) */
+        
+        .numbertext {
+            color: white;
+            font-size: 2vw;
+            padding: 1vw 1vw;
+            position: absolute;
+            top: 0;
+            left: 47%;
+        }
+        /* The dots/bullets/indicators */
+        
+        .dot {
+            height: 2vw;
+            width: 2vw;
+            margin: 1vw 0.5vw;
+            background-color: #555;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+        .active-dot {
+            background-color: orange;
+        }
+        /* Fading animation */
+        
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        /* On smaller screens, decrease text size */
+        
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+        
+        .overlay-title {
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgb(0, 0, 0));
+            color: #f1f1f1;
+            width: 100%;
+            min-height: 40%;
+            transition: .5s ease;
+            opacity: 0;
+            color: white;
+            font-size: 2vw;
+            padding: 1vw 0;
+            height: auto;
+            text-align: center;
+            animation: over-anim 1s 0.5s forwards;
+        }
+        
+        @media screen and (max-width: 800px) {
+            .overlay-title {
+                font-size: 3vw;
+            }
+            .overlay-title p {
+                padding: 1vw;
+            }
+            #slideshow .btn-light-small {
+                margin-top: 2vw;
+                padding: 1.5vw;
+                font-size: 3vw;
+            }
+            .dot {
+                width: 3vw;
+                height: 3vw;
+                margin: 2vw 2vw;
+            }
+        }
+        
+        #slideshow .overlay-title p {
+            padding: 1vw;
+        }
+        
+        @keyframes over-anim {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Next & previous buttons */
+        
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 2vw;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        /* Position the "next button" to the right */
+        
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        /* On hover, add a black background color with a little bit see-through */
+        
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        /*-----      ----------    -----    Section-3    -----    ----------        -----*/
+        /* design PC */
+        
+        #categories {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 3vw 0;
+            background-color: white;
+        }
+        /* design tablet e cellulare */
+        
+        @media screen and (max-width: 1200px) {
+            #categories {
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+        }
+        /* design principale dei box */
+        
+        .box {
+            position: relative;
+            background-color: #333;
+            border: 3px solid #555;
+            font-size: 6vh;
+            text-align: center;
+            color: orange;
+            transition: all 1s ease;
+            margin: 1vw 0 1vw 0;
+        }
+        
+        .box img {
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            filter: grayscale(0.8);
+            transition: all 1s ease;
+        }
+        /* animazione hover per PC */
+        
+        @media screen and (min-width: 1200px) {
+            .box:hover {
+                border: 3px solid orange;
+                transition: all 1s ease;
+            }
+        }
+        /* design per tablet e cellulare */
+        
+        @media screen and (max-width: 1200px) {
+            .box {
+                max-width: 99%;
+                padding: 0%;
+                max-height: 30vh;
+                font-size: 4vh;
+            }
+        }
+        
+        @keyframes animazione-box {
+            from {
+                border: 3px solid #555;
+            }
+            to {
+                border: 3px solid orange;
+            }
+        }
+        /* alineamento orizontale per PC */
+        
+        .sector-name {
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            left: 50%;
+            right: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 1s ease;
+            z-index: 1;
+        }
+        /* animazione hover per PC */
+        
+        @media screen and (min-width: 1200px) {
+            .box {
+                width: 340px;
+                height: 220px;
+            }
+            .box:hover {
+                width: 540px;
+                height: 350px;
+                transition: all 1s ease;
+            }
+            .box:hover .sector-name {
+                opacity: 0.2;
+                transition: all 1s ease;
+            }
+            .box:hover img {
+                filter: grayscale(0);
+                transition: all 1s ease;
+            }
+        }
+        /* alineamento verticale per tabelt e telefono */
+        
+        @media screen and (max-width: 1200px) {
+            .box {
+                width: 99vw;
+                height: 25vw;
+            }
+        }
+        /* animazione per tablet e telefono */
+        
+        @media screen and (max-width: 1200px) {
+            #box-1 {
+                animation: animazione-box-1 1.5s 3s infinite alternate, animazione-box 1.5s 3s infinite alternate;
+            }
+            #box-2 {
+                animation: animazione-box-2 1.5s 4s infinite alternate, animazione-box 1.5s 4s infinite alternate;
+            }
+            #box-3 {
+                animation: animazione-box-3 1.5s 5s infinite alternate, animazione-box 1.5s 5s infinite alternate;
+            }
+        }
+        
+        @keyframes animazione-opacity {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0.2;
+            }
+        }
+        
+        @keyframes animazione-box-1 {
+            from {
+                background: url("../immagini/segnior-bw.jpg") center/cover;
+            }
+            to {
+                background: url("../immagini/segnior.jpg") center/cover;
+            }
+        }
+        
+        @keyframes animazione-box-2 {
+            from {
+                background: url("../immagini/giovanili/giovanili-bw.jpg") center/cover;
+            }
+            to {
+                background: url("../immagini/giovanili/giovanili.jpg") center/cover;
+            }
+        }
+        
+        @keyframes animazione-box-3 {
+            from {
+                background: url("../immagini/minibasket/minibasket-bw.jpg") center/cover;
+            }
+            to {
+                background: url("../immagini/minibasket/minibasket.jpg") center/cover;
+            }
+        }
+        
+        #box-1 {
+            background: url("../immagini/segnior-bw.jpg") center/cover;
+            transition: all 1s;
+        }
+        
+        #box-2 {
+            background: url("../immagini/giovanili/giovanili-bw.jpg") center/cover;
+            transition: all 1s;
+        }
+        
+        #box-3 {
+            background: url("../immagini/minibasket/minibasket-bw.jpg") center/cover;
+            transition: all 1s;
+        }
+        
+        @media screen and (min-width: 1200px) {
+            #box-1:hover {
+                background: url("../immagini/segnior.jpg") center/cover;
+                transition: all 1s;
+            }
+            #box-2:hover {
+                background: url("../immagini/giovanili/giovanili.jpg") center/cover;
+                transition: all 1s;
+            }
+            #box-3:hover {
+                background: url("../immagini/minibasket/minibasket.jpg") center/cover;
+                transition: all 1s;
+            }
+        }
+        /*-----      ----------    -----    Next-game    -----    ----------        -----*/
+        
+        #next-game {
+            background-color: gray;
+            background: url("../immagini/campo.jpg") center center/cover;
+            /*background-attachment: fixed;*/
+            color: #fff;
+        }
+        
+        #next-game .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .team {
+            display: flex;
+            padding: 1vw 4vw;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .team-name {
+            font-size: 3vw;
+            margin: 1vw 0;
+        }
+        
+        .team-logo {
+            height: 7vw;
+            width: 7vw;
+            padding: 1vw;
+            margin: auto;
+        }
+        
+        #versus p {
+            font-size: 6vw;
+            font-weight: bold;
+            color: orange;
+        }
+        
+        #game-info {
+            display: flex;
+            flex-direction: row;
+            font-size: 2vw;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        #game-info p {
+            margin: 0 2vw;
+        }
+        
+        #indication {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2vw;
+        }
+        
+        #demo {
+            font-size: 2vw;
+            text-align: center;
+            padding-bottom: 1vw;
+        }
+        
+        @media screen and (max-width:800px) {
+            .team-name {
+                font-size: 4vw;
+            }
+            #game-info {
+                font-size: 3vw;
+            }
+            #indication .btn-light-small {
+                font-size: 3vw;
+                padding: 1vw;
+            }
+        }
+        /*-----      ----------    -----    Roaster    -----    ----------        -----*/
+        
+        .roaster {
+            font-size: 1.5vw;
+            background-color: white;
+            border-bottom: 1.5vw solid darkgray;
+            box-sizing: border-box;
+        }
+        
+        #nome-sezione {
+            text-align: center;
+            font-size: 3vw;
+            font-weight: bold;
+            padding: 1vw;
+            background-color: darkgray;
+        }
+        
+        .column-palyer {
+            box-sizing: border-box;
+            float: left;
+            width: 20%;
+            margin-bottom: 1vw;
+            padding: 1vw 1vw;
+        }
+        
+        .column-staff {
+            box-sizing: border-box;
+            float: left;
+            width: 25%;
+            margin-bottom: 1vw;
+            padding: 1vw 1vw;
+        }
+        
+        #staff-5,
+        #staff-8 {
+            visibility: hidden;
+        }
+        
+        .player-name {
+            text-align: center;
+            font-size: 1.5vw;
+            padding: 1vw;
+        }
+        
+        @media screen and (max-width: 1000px) {
+            .column-palyer {
+                width: 33.3%;
+            }
+            .column-staff {
+                width: 33.3%;
+            }
+            .player-foto {
+                min-height: 18vw;
+            }
+        }
+        
+        @media screen and (max-width: 450px) {
+            .column-palyer {
+                width: 50%;
+            }
+            #prima-squadra .column-palyer:last-of-type {
+                margin-left: 25%;
+            }
+            .column-staff {
+                width: 50%;
+            }
+            .player-foto {
+                min-height: 45vw;
+            }
+            #staff-5 {
+                visibility: visible;
+            }
+            #staff-7,
+            #staff-8 {
+                display: none;
+            }
+            #nome-sezione {
+                font-size: 5vw;
+            }
+            .player-name {
+                font-size: 2.5vw;
+            }
+        }
+        
+        .column-palyer:before,
+        .column-palyer:after {
+            box-sizing: inherit;
+        }
+        
+        .column-staff:before,
+        .column-staff:after {
+            box-sizing: inherit;
+        }
+        
+        .player-foto {
+            position: relative;
+            background: url("../immagini/icon-bb-player.jpg") center/cover;
+            background-size: 100% 80%;
+            background-repeat: no-repeat;
+            color: white;
+            transition: all 1s;
+        }
+        
+        @media screen and (min-width:1000px) {
+            .player-foto:hover .overlay {
+                height: 100%;
+                transition: all 1s;
+            }
+        }
+        
+        .player-foto img {
+            min-height: 15vw;
+            width: 100%;
+        }
+        
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            color: white;
+            font-size: 1.5vw;
+            text-align: center;
+            transition: 1s ease;
+        }
+        
+        .player-foto p {
+            transition: all 1s;
+        }
+        
+        #roaster #staff-tecnico {
+            width: 100%;
+            text-align: center;
+            font-size: 3vw;
+            font-weight: bold;
+            padding: 0.5vw;
+            background-color: darkgray;
+        }
+        
+        .staff {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 0.5vw 0 1vw 0;
+        }
+        /*-----      ----------    -----    Sponsor-section    -----    ----------        -----*/
+        
+        #sponsor-section {
+            padding: 0.5vw 0.5vw;
+            background-color: #fff;
+        }
+        
+        #sponsor-section #riga-1,
+        #sponsor-section #riga-2 {
+            float: left;
+        }
+        
+        #sponsor-section #riga-1 {
+            margin-left: 3%;
+        }
+        
+        #sponsor-section .container {
+            height: auto;
+            float: left;
+            width: 7vw;
+            padding: 0.5vw 1vw;
+            display: flex;
+            border-width: 1px;
+            border-style: solid;
+            border-image: linear-gradient( to bottom, white, black, white) 1 100%;
+            border-left: none;
+        }
+        
+        #sponsor-section #riga-2 .container:last-of-type {
+            border: none;
+        }
+        
+        #sponsor-section .sponsor {
+            height: 6vw;
+            width: 6vw;
+            padding: 0.5vw 1vw;
+            /*border-right: 1 px solid linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.5));*/
+            /*border-right: 1px solid black;*/
+        }
+        
+        @media screen and (min-width:1100px) {
+            #sponsor-section .sponsor:hover {
+                transform: rotateY(360deg);
+                transition: all 1s;
+            }
+            /*
     #sponsor-section .riga-1 {
         display: flex;
         flex-direction: row;
@@ -964,450 +986,537 @@ a {
         padding-bottom: 1vw;
         margin: auto;
     }*/
-}
-
-#sponsor-section .container #sps-1 {
-    background: url("../immagini/sponsors/bincosport.JPG") center;
-    background-size: 6vw 6vw;
-    background-repeat: no-repeat;
-    height: 6vw;
-    width: 6vw;
-}
-
-#sps-2 {
-    background: url("../immagini/sponsors/BSAtech.jpg") center;
-    background-size: 6vw 6vw;
-    background-repeat: no-repeat;
-}
-
-#sps-3 {
-    background: url("../immagini/sponsors/canellitech.jpg") center;
-    background-size: 4vw 4vw;
-    background-repeat: no-repeat;
-}
-
-#sps-4 {
-    background: url("../immagini/sponsors/caponord.jpg") center;
-    background-size: 5vw 5vw;
-    background-repeat: no-repeat;
-}
-
-#sps-5 {
-    background: url("../immagini/sponsors/lavanderia1h.jpg") center/cover;
-    background-size: 5vw 5vw;
-    background-repeat: no-repeat;
-}
-
-#sps-6 {
-    background: url("/immagini/sponsors/puntobere.JPG") center/cover;
-    background-size: 7vw 3vw;
-    background-repeat: no-repeat;
-}
-
-#sps-7 {
-    background: url("/immagini/sponsors/sagrin.JPG") center/cover;
-    background-size: 5vw 5vw;
-    background-repeat: no-repeat;
-}
-
-#sps-8 {
-    background: url("immagini/sponsors/rapetti-paolo-abbigliamenti.jpg") center/cover;
-    background-size: 4vw 4vw;
-    background-repeat: no-repeat;
-}
-
-#sps-9 {
-    background: url("immagini/sponsors/ebrille-industries.jpg") center/cover;
-    background-size: 6vw 6vw;
-    background-repeat: no-repeat;
-}
-
-#sps-10 {
-    background: url("immagini/sponsors/ottica-mali.jpg") center/cover;
-    background-size: 4vw 4vw;
-    background-repeat: no-repeat;
-    border-right: none;
-}
-
-
-/*-----      ----------    -----    Footer    -----    ----------        -----*/
-
-#footer {
-    background-color: black;
-    font-size: 1.2vw;
-}
-
-#footer .container {
-    display: flex;
-    align-items: center;
-}
-
-#footer .container div {
-    padding: 2vw;
-    color: white;
-    display: block;
-    flex: auto;
-}
-
-#footer #diritti {
-    text-align: left;
-}
-
-#footer #social {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 0 1vw;
-}
-
-#footer #social a img {
-    height: 2vw;
-    width: 2vw;
-}
-
-#footer #autore {
-    text-align: right;
-}
-
-
-/*-----      ----------    -----    About    -----    ----------        -----*/
-
-
-/*-----      ----------    -----    section-1-about    -----    ----------        -----*/
-
-#section-1-about {
-    background-color: black;
-    color: red;
-    font-size: 3vw;
-    text-align: justify;
-    opacity: 0.9;
-}
-
-.space {
-    height: 80vh;
-}
-
-@media screen and (min-width:1100px) {
-    #spazio-1 {
-        background: url("/immagini/BN\ logo.jpeg") no-repeat center fixed;
-        background-size: 35% 60%;
-    }
-    #spazio-2 {
-        background: url("/immagini/minibasket.jpg") no-repeat center;
-        background-size: 60% 100%;
-        background-attachment: fixed;
-    }
-}
-
-@media screen and (max-width:1100px) {
-    #spazio-1 {
-        background: url("/immagini/BN\ logo.jpeg") no-repeat center fixed;
-        background-size: 80% 50%;
-    }
-    #spazio-2 {
-        background: url("/immagini/minibasket.jpg") no-repeat center fixed;
-        background-size: 100% 60%;
-    }
-}
-
-#section-1-about .container {
-    color: white;
-    background-color: #333;
-    padding: 2vw;
-}
-
-
-/*
+        }
+        
+        #sps-1 {
+            background: url("../immagini/sponsors/bincosport.JPG") center;
+            background-size: 6vw 6vw;
+            background-repeat: no-repeat;
+            height: 6vw;
+            width: 6vw;
+        }
+        
+        #sps-2 {
+            background: url("../immagini/sponsors/BSAtech.jpg") center;
+            background-size: 6vw 6vw;
+            background-repeat: no-repeat;
+        }
+        
+        #sps-3 {
+            background: url("../immagini/sponsors/canellitech.jpg") center;
+            background-size: 4vw 4vw;
+            background-repeat: no-repeat;
+        }
+        
+        #sps-4 {
+            background: url("../immagini/sponsors/caponord.jpg") center;
+            background-size: 5vw 5vw;
+            background-repeat: no-repeat;
+        }
+        
+        #sps-5 {
+            background: url("../immagini/sponsors/lavanderia1h.jpg") center/cover;
+            background-size: 5vw 5vw;
+            background-repeat: no-repeat;
+        }
+        
+        #sps-6 {
+            background: url("../immagini/sponsors/puntobere.JPG") center/cover;
+            background-size: 7vw 3vw;
+            background-repeat: no-repeat;
+        }
+        
+        #sps-7 {
+            background: url("../immagini/sponsors/sagrin.JPG") center/cover;
+            background-size: 5vw 5vw;
+            background-repeat: no-repeat;
+        }
+        
+        #sps-8 {
+            background: url("../immagini/sponsors/rapetti-paolo-abbigliamenti.jpg") center/cover;
+            background-size: 4vw 4vw;
+            background-repeat: no-repeat;
+        }
+        
+        #sps-9 {
+            background: url("../immagini/sponsors/ebrille-industries.jpg") center/cover;
+            background-size: 6vw 6vw;
+            background-repeat: no-repeat;
+        }
+        
+        #sps-10 {
+            background: url("../immagini/sponsors/ottica-mali.jpg") center/cover;
+            background-size: 4vw 4vw;
+            background-repeat: no-repeat;
+            border-right: none;
+        }
+        
+        @media screen and (max-width:450px) {
+            #sponsor-section #riga-1,
+            #sponsor-section #riga-2 {
+                float: left;
+                width: 99%;
+            }
+            #sponsor-section #riga-1 {
+                margin-left: 16vw;
+                width: 80%;
+            }
+            #sponsor-section #riga-1 .container:last-of-type {
+                border: none;
+            }
+            #sps-1,
+            #sps-2,
+            #sps-9 {
+                background-size: 9vw 9vw;
+                background-position: center;
+            }
+            #sps-3,
+            #sps-8,
+            #sps-10 {
+                background-size: 7vw 7vw;
+                background-position: center;
+            }
+            #sps-4,
+            #sps-5,
+            #sps-7 {
+                background-size: 8vw 8vw;
+                background-position: center;
+            }
+            #sps-6 {
+                background-size: 9vw 5vw;
+                background-position: center;
+            }
+            #sponsor-section .container {
+                width: 12vw;
+                margin: 1vw;
+            }
+            #sponsor-section .sponsor {
+                width: 12vw;
+                height: 10vw;
+            }
+        }
+        /*-----      ----------    -----    Footer    -----    ----------        -----*/
+        
+        #footer {
+            background-color: black;
+            font-size: 1.5vw;
+        }
+        
+        #footer .container {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+        
+        #footer .container div {
+            padding: 2vw;
+            color: white;
+            display: block;
+            flex: auto;
+        }
+        
+        #footer #diritti {
+            text-align: left;
+        }
+        
+        #footer #social {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 0 1vw;
+        }
+        
+        #footer #social a img {
+            height: 20px;
+            width: 20px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+        
+        #autore {
+            text-align: right;
+        }
+        
+        @media screen and (max-width:450px) {
+            #footer .container {
+                flex-direction: column;
+                font-size: 2vw;
+                text-align: center;
+            }
+            #autore {
+                text-align: center;
+            }
+        }
+        /*-----      ----------    -----    About    -----    ----------        -----*/
+        /*-----      ----------    -----    section-1-about    -----    ----------        -----*/
+        
+        #section-1-about {
+            background-color: black;
+            color: red;
+            font-size: 3vw;
+            text-align: justify;
+            opacity: 0.9;
+        }
+        
+        .space {
+            height: 80vh;
+        }
+        
+        @media screen and (min-width:1100px) {
+            #spazio-1 {
+                background: url("../immagini/BN\ logo.jpeg") no-repeat center fixed;
+                background-size: 35% 60%;
+            }
+            #spazio-2 {
+                background: url("../immagini/minibasket.jpg") no-repeat center;
+                background-size: 60% 100%;
+                background-attachment: fixed;
+            }
+            #spazio-3 {
+                background: url("../immagini/palla.jpg") no-repeat center;
+                background-size: 60% 90%;
+                background-attachment: fixed;
+            }
+            #section-1-about .container {
+                color: white;
+                background-color: #333;
+                padding: 2vw 3vw;
+            }
+        }
+        
+        @media screen and (max-width:1100px) {
+            .space {
+                height: 60vh;
+            }
+            #spazio-1 {
+                background: url("../immagini/BN\ logo.jpeg") no-repeat center fixed;
+                background-size: 80% 50%;
+                vertical-align: middle;
+                height: 50vh;
+                padding-bottom: 50vw;
+            }
+            #spazio-2 {
+                background: url("../immagini/minibasket.jpg") no-repeat center fixed;
+                background-size: 130% 100%;
+            }
+            #spazio-3 {
+                background: url("../immagini/palla.jpg") no-repeat center;
+                background-size: 130% 100%;
+                background-attachment: fixed;
+            }
+            #section-1-about .container {
+                color: white;
+                background-color: #333;
+                padding: 5vw 4vw;
+                font-size: 4vw;
+            }
+        }
+        /*
 @media screen and (min-width:1000px) {
     
 }*/
-
-#spazio-3 {
-    background: url("/immagini/palla.jpg") no-repeat center;
-    background-size: 60% 90%;
-    background-attachment: fixed;
-}
-
-
-/*-----      ----------    -----    Contact    -----    ----------        -----*/
-
-#form {
-    box-sizing: border-box;
-    margin-bottom: 1vw;
-    border-radius: 5px;
-    background-color: white;
-    padding: 2vw 0;
-}
-
-
-/*-----      ----------    -----    Contact    -----    ----------        -----*/
-
-.column-card {
-    box-sizing: border-box;
-    float: left;
-    width: 33.3%;
-    margin-bottom: 3vw;
-    padding: 1vw 1vw;
-}
-
-.column-card:before,
-.column-card:after {
-    box-sizing: inherit;
-}
-
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
-    margin: 8px;
-    padding: 1vw 1vw;
-}
-
-#form .card img {
-    padding: 1vw;
-}
-
-.about-section {
-    padding: 3vw;
-    text-align: center;
-    background-color: #474e5d;
-    color: white;
-}
-
-.info {
-    text-align: center;
-    padding: 1vw;
-    border-top: 1px solid #000000;
-    font-size: 1.5vw;
-}
-
-.info p {
-    padding: 0.5vw;
-}
-
-.info::after,
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.title {
-    color: grey;
-    min-height: 4vw;
-}
-
-.button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 1vw;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 50%;
-}
-
-.button:hover {
-    background-color: #555;
-}
-
-@media screen and (max-width: 650px) {
-    .column-card {
-        width: 50%;
-        display: block;
-    }
-}
-
-
-/* Create two columns that float next to eachother */
-
-.column {
-    float: left;
-    width: 50%;
-    margin-top: 1vw;
-    padding: 2vw;
-}
-
-#form #column-1 {
-    max-width: 450px;
-}
-
-#form #column-1 img {
-    margin: auto;
-    vertical-align: middle;
-}
-
-
-/* Clear floats after the columns */
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-
-@media screen and (max-width: 600px) {
-    .column,
-    input[type=submit] {
-        width: 100%;
-        margin-top: 0;
-    }
-}
-
-
-/* Style inputs */
-
-input[type=text],
-select,
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-input[type=submit] {
-    background-color: #333;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-    transition: 0.5s ease;
-}
-
-input[type=submit]:hover {
-    background-color: #555;
-    color: orange;
-    transition: 0.5s ease;
-}
-
-
-/*-------------------------------------------------------------------------------------------------*/
-
-#section-1-minibasket {
-    background-color: #333;
-    color: white;
-    font-size: 2vw;
-    text-align: justify;
-    padding: 2vw;
-    background: linear-gradient(to bottom, #222, #777);
-}
-
-#section-1-minibasket ul {
-    padding: 1vw;
-}
-
-#section-1-minibasket ul li {
-    padding: 1vw;
-}
-
-@media screen and (min-width:1000px) {
-    #istruttore {
-        float: left;
-        width: 30%;
-        margin-left: 10vw;
-    }
-}
-
-@media screen and (max-width:1000px) {
-    #istruttore {
-        float: left;
-        width: 30%;
-        margin-left: 30vw;
-    }
-    #informazioni {
-        padding-left: 10vw;
-        width: 80%;
-        font-size: 3vw;
-    }
-    #spazio-1-scoiattoli {
-        background: url("/immagini/minibasket/scoiattoli/scoiattoli-copertina.jpg") no-repeat center fixed;
-        background-size: 140% 70%;
-        background-color: black;
-        height: 80vh;
-    }
-}
-
-#section-1-scoiattoli .space {
-    background-origin: content-box;
-    height: 85vh;
-}
-
-#section-1-scoiattoli .container {
-    color: black;
-    padding: 2rem;
-    margin: 1rem 1rem;
-}
-
-.container-staff {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.card-staff {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    display: block;
-    box-shadow: 0 4px 8px 0 rgba(9, 9, 9, 0.5);
-    max-width: 25vw;
-    padding: 1vw;
-    margin-left: 10vw;
-    margin: 1vw;
-}
-
-.card-staff .info {
-    border: none;
-}
-
-.qualifica {
-    text-align: center;
-    color: gray;
-    padding: 1vw 0 0 0;
-}
-
-#section-1-scoiattoli .container h1 {
-    text-align: center;
-}
-
-@media screen and (min-width:1000px) {
-    #scoiattoli .row .column-palyer:last-of-type,
-    #scoiattoli .row .column-palyer:nth-last-of-type(2) {
-        margin-left: 20vw;
-    }
-    #spazio-1-scoiattoli {
-        background: url("/immagini/minibasket/scoiattoli/scoiattoli-copertina.jpg") no-repeat center fixed;
-        background-size: 70% 100%;
-        background-color: black;
-        height: 85vh;
-    }
-}
-
-
-/*-------------------------------------------------------------------------------------------------*/
-
-@media screen and (max-width:1000px) {
-    #spazio-1-aquilotti {
-        background: url("/immagini/minibasket/aquilotti/aquilotti-copertina.jpg") no-repeat center fixed;
-        background-size: 150% 60%;
-        background-color: black;
-        height: 80vh;
-    }
-}
-
-@media screen and (min-width:1000px) {
-    #spazio-1-aquilotti {
-        background: url("/immagini/minibasket/aquilotti/aquilotti-copertina.jpg") no-repeat center fixed;
-        background-size: 70% 110%;
-        background-color: black;
-        height: 85vh;
-    }
-}
+        /*-----      ----------    -----    Contact    -----    ----------        -----*/
+        
+        #form {
+            box-sizing: border-box;
+            margin-bottom: 1vw;
+            border-radius: 5px;
+            background-color: white;
+            padding: 2vw 0;
+        }
+        /*-----      ----------    -----    Contact    -----    ----------        -----*/
+        
+        .column-card {
+            box-sizing: border-box;
+            float: left;
+            width: 33.3%;
+            margin-bottom: 3vw;
+            padding: 1vw 1vw;
+        }
+        
+        .column-card:before,
+        .column-card:after {
+            box-sizing: inherit;
+        }
+        
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+            margin: 8px;
+            padding: 1vw 1vw;
+        }
+        
+        #form .card img {
+            padding: 1vw;
+        }
+        
+        .about-section {
+            padding: 3vw;
+            text-align: center;
+            background-color: #474e5d;
+            color: white;
+        }
+        
+        .info {
+            text-align: center;
+            padding: 1vw;
+            border-top: 1px solid #000000;
+            font-size: 1.5vw;
+        }
+        
+        .title {
+            color: grey;
+            min-height: 4vw;
+        }
+        
+        @media screen and (max-width:450px) {
+            .info {
+                font-size: 2.5vw;
+            }
+            .title {
+                min-height: 8vw;
+                padding-top: 2vw;
+            }
+        }
+        
+        .info p {
+            padding: 0.5vw;
+        }
+        
+        .info::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 1vw;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 50%;
+        }
+        
+        .button:hover {
+            background-color: #555;
+        }
+        
+        @media screen and (max-width: 650px) {
+            .column-card {
+                width: 50%;
+                display: block;
+            }
+        }
+        /* Create two columns that float next to eachother */
+        
+        .column {
+            float: left;
+            width: 50%;
+            margin-top: 1vw;
+            padding: 2vw;
+        }
+        
+        #form #column-1 {
+            max-width: 450px;
+        }
+        
+        #form #column-1 img {
+            margin: auto;
+            vertical-align: middle;
+        }
+        
+        #contact-form {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 600px) {
+            .column,
+            input[type=submit] {
+                width: 90%;
+                margin-top: 0;
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+        }
+        /* Style inputs */
+        
+        input[type=text],
+        select,
+        textarea {
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+        
+        #contact-form label {
+            padding: 12px;
+        }
+        
+        input[type=submit] {
+            background-color: #333;
+            color: white;
+            padding: 12px 0 20px 0;
+            border: none;
+            cursor: pointer;
+            transition: 0.5s ease;
+        }
+        
+        input[type=submit]:hover {
+            background-color: #555;
+            color: orange;
+            transition: 0.5s ease;
+        }
+        /*-------------------------------------------------------------------------------------------------*/
+        
+        #section-1-minibasket {
+            background-color: #333;
+            color: white;
+            font-size: 2vw;
+            text-align: justify;
+            padding: 2vw;
+            background: linear-gradient(to bottom, #222, #777);
+        }
+        
+        @media screen and (max-width:450px) {
+            #section-1-minibasket .column:first-of-type {
+                margin-left: 0;
+                font-size: 3vw;
+            }
+            #section-1-minibasket h1 {
+                font-size: 5vw;
+            }
+        }
+        
+        #section-1-minibasket ul {
+            padding: 1vw;
+        }
+        
+        #section-1-minibasket ul li {
+            padding: 1vw;
+        }
+        
+        @media screen and (min-width:1000px) {
+            #istruttore {
+                float: left;
+                width: 30%;
+                margin-left: 10vw;
+            }
+        }
+        
+        @media screen and (max-width:1000px) {
+            #istruttore {
+                float: left;
+                width: 50%;
+                margin-left: 25%;
+            }
+            #istruttore .info {
+                font-size: 2vw;
+            }
+            #informazioni {
+                padding-left: 10vw;
+                width: 80%;
+                font-size: 3vw;
+            }
+            #spazio-1-scoiattoli {
+                background: url("../immagini/minibasket/scoiattoli/scoiattoli-copertina.jpg") no-repeat center fixed;
+                background-size: 140% 70%;
+                background-color: black;
+                height: 80vh;
+            }
+        }
+        
+        #section-1-scoiattoli .space {
+            background-origin: content-box;
+            height: 85vh;
+        }
+        
+        #section-1-scoiattoli .container {
+            color: black;
+            padding: 2rem;
+            margin: 1rem 1rem;
+        }
+        
+        .container-staff {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        
+        .card-staff {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: block;
+            box-shadow: 0 4px 8px 0 rgba(9, 9, 9, 0.5);
+            max-width: 50vw;
+            padding: 1vw;
+            margin-left: 10vw;
+            margin: 1vw;
+        }
+        
+        .card-staff .info {
+            border: none;
+        }
+        
+        .qualifica {
+            text-align: center;
+            color: gray;
+            padding: 1vw 0 0 0;
+        }
+        
+        #section-1-scoiattoli .container h1 {
+            text-align: center;
+        }
+        
+        @media screen and (min-width:1000px) {
+            #scoiattoli .row .column-palyer:last-of-type,
+            #scoiattoli .row .column-palyer:nth-last-of-type(2) {
+                margin-left: 20vw;
+            }
+            #spazio-1-scoiattoli {
+                background: url("../immagini/minibasket/scoiattoli/scoiattoli-copertina.jpg") no-repeat center fixed;
+                background-size: 70% 100%;
+                background-color: black;
+                height: 85vh;
+            }
+        }
+        /*-------------------------------------------------------------------------------------------------*/
+        
+        @media screen and (max-width:1000px) {
+            #spazio-1-aquilotti {
+                background: url("../immagini/minibasket/aquilotti/aquilotti-copertina.jpg") no-repeat center fixed;
+                background-size: 150% 60%;
+                background-color: black;
+                height: 80vh;
+            }
+        }
+        
+        @media screen and (min-width:1000px) {
+            #spazio-1-aquilotti {
+                background: url("../immagini/minibasket/aquilotti/aquilotti-copertina.jpg") no-repeat center fixed;
+                background-size: 70% 110%;
+                background-color: black;
+                height: 85vh;
+            }
+        }
