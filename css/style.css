@@ -567,10 +567,10 @@
         
         @keyframes animazione-box {
             from {
-                border: 3px solid #555;
+                border: 3px solid orange;
             }
             to {
-                border: 3px solid orange;
+                border: 3px solid #555;
             }
         }
         /* alineamento orizontale per PC */
@@ -641,28 +641,28 @@
         
         @keyframes animazione-box-1 {
             from {
-                background: url("../immagini/segnior-bw.jpg") center/cover;
+                background: url("../immagini/segnior.jpg") center/cover;
             }
             to {
-                background: url("../immagini/segnior.jpg") center/cover;
+                background: url("../immagini/segnior-bw.jpg") center/cover;
             }
         }
         
         @keyframes animazione-box-2 {
             from {
-                background: url("../immagini/giovanili/giovanili-bw.jpg") center/cover;
+                background: url("../immagini/giovanili/giovanili.jpg") center/cover;
             }
             to {
-                background: url("../immagini/giovanili/giovanili.jpg") center/cover;
+                background: url("../immagini/giovanili/giovanili-bw.jpg") center/cover;
             }
         }
         
         @keyframes animazione-box-3 {
             from {
-                background: url("../immagini/minibasket/minibasket-bw.jpg") center/cover;
+                background: url("../immagini/minibasket/minibasket.jpg") center/cover;
             }
             to {
-                background: url("../immagini/minibasket/minibasket.jpg") center/cover;
+                background: url("../immagini/minibasket/minibasket-bw.jpg") center/cover;
             }
         }
         
@@ -764,14 +764,29 @@
         
         @media screen and (max-width:800px) {
             .team-name {
-                font-size: 4vw;
+                font-size: 6vw;
+                color: black;
+                text-align: center;
+                margin-top: 5vw;
+            }
+            .team-logo {
+                height: 15vw;
+                width: 15vw;
+                margin-top: 5vw;
+            }
+            #versus p {
+                font-size: 10vw;
+                margin-top: 5vw;
             }
             #game-info {
-                font-size: 3vw;
+                margin-top: 2vw;
+                font-size: 4vw;
             }
             #indication .btn-light-small {
-                font-size: 3vw;
+                font-size: 4vw;
                 padding: 1vw;
+                margin-top: 2vw;
+                margin-bottom: 5vw;
             }
         }
         /*-----      ----------    -----    Roaster    -----    ----------        -----*/
@@ -1186,13 +1201,13 @@
         
         @media screen and (max-width:1100px) {
             .space {
-                height: 60vh;
+                height: 110vw;
             }
             #spazio-1 {
                 background: url("../immagini/BN\ logo.jpeg") no-repeat center fixed;
                 background-size: 80% 50%;
                 vertical-align: middle;
-                height: 50vh;
+                height: 70vw;
                 padding-bottom: 50vw;
             }
             #spazio-2 {
