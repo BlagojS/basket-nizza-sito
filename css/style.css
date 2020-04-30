@@ -967,7 +967,7 @@ a {
 }
 
 #sponsor-section .container #sps-1 {
-    background: url("/immagini/sponsors/bincosport.JPG") center;
+    background: url("../immagini/sponsors/bincosport.JPG") center;
     background-size: 6vw 6vw;
     background-repeat: no-repeat;
     height: 6vw;
@@ -975,25 +975,25 @@ a {
 }
 
 #sps-2 {
-    background: url("/immagini/sponsors/BSAtech.jpg") center;
+    background: url("../immagini/sponsors/BSAtech.jpg") center;
     background-size: 6vw 6vw;
     background-repeat: no-repeat;
 }
 
 #sps-3 {
-    background: url("/immagini/sponsors/canellitech.jpg") center;
+    background: url("../immagini/sponsors/canellitech.jpg") center;
     background-size: 4vw 4vw;
     background-repeat: no-repeat;
 }
 
 #sps-4 {
-    background: url("/immagini/sponsors/caponord.jpg") center;
+    background: url("../immagini/sponsors/caponord.jpg") center;
     background-size: 5vw 5vw;
     background-repeat: no-repeat;
 }
 
 #sps-5 {
-    background: url("/immagini/sponsors/lavanderia1h.jpg") center/cover;
+    background: url("../immagini/sponsors/lavanderia1h.jpg") center/cover;
     background-size: 5vw 5vw;
     background-repeat: no-repeat;
 }
