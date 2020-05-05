@@ -763,20 +763,23 @@
         }
         
         @media screen and (max-width:800px) {
+            .team {
+                padding: 1vw 1vw;
+            }
             .team-name {
-                font-size: 6vw;
-                color: black;
+                font-size: 5vw;
+                color: white;
                 text-align: center;
-                margin-top: 5vw;
+                margin-top: 10vw;
             }
             .team-logo {
-                height: 15vw;
-                width: 15vw;
-                margin-top: 5vw;
+                height: 13vw;
+                width: 13vw;
+                margin-top: 10vw;
             }
             #versus p {
                 font-size: 10vw;
-                margin-top: 5vw;
+                margin-top: 10vw;
             }
             #game-info {
                 margin-top: 2vw;
